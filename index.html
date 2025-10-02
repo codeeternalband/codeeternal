@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
       font-family: Arial, Helvetica, sans-serif;
       background-color: #000;
       color: #fff;
-      text-align: center;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -20,6 +20,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
 
     header img.logo {
@@ -44,15 +45,29 @@
     }
 
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 1000px;
       margin: 0 auto;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #00adef;
     }
 
     .band img {
       max-width: 100%;
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      margin-top: 20px;
     }
 
     .socials {
@@ -79,30 +94,67 @@
       font-size: 14px;
       background-color: #111;
       margin-top: 50px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
+  <!-- Hero Section -->
   <header>
     <img src="logo-white.png" alt="Code Eternal Logo" class="logo">
     <nav>
-      <a href="#band">Bändi</a>
-      <a href="#music">Musiikki</a>
-      <a href="#contact">Yhteystiedot</a>
+      <a href="#biography">Biography</a>
+      <a href="#music">Music</a>
+      <a href="#videos">Videos</a>
+      <a href="#tour">Tour</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section id="band" class="band">
-    <h2>Code Eternal</h2>
-    <p>Code Eternal on moderni metallibändi, joka yhdistää raskaat riffit ja melodisen soundin. 
-       Musiikkimme rakentuu energian, tunteiden ja tarinankerronnan ympärille.</p>
+  <!-- Biography Section -->
+  <section id="biography">
+    <h2>Biography</h2>
+    <p>[Your band biography text will go here later]</p>
     <img src="band.jpg" alt="Code Eternal band photo">
   </section>
 
+  <!-- Music Section -->
   <section id="music">
-    <h2>Musiikki</h2>
-    <p>Tuleva debyyttialbumimme on työn alla – pysy kuulolla!</p>
+    <h2>Music</h2>
+    <p>Listen to our latest music on Spotify:</p>
+    <!-- Replace with your actual Spotify embed -->
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" 
+      width="100%" height="380" frameBorder="0" allowfullscreen="" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </section>
+
+  <!-- Videos Section -->
+  <section id="videos">
+    <h2>Videos</h2>
+    <p>Watch our music videos:</p>
+    <!-- Replace with your actual YouTube video embeds -->
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
+  </section>
+
+  <!-- Tour Section -->
+  <section id="tour">
+    <h2>Tour</h2>
+    <p>Upcoming shows:</p>
+    <ul style="list-style: none; padding: 0;">
+      <li>📍 12.10.2025 – Helsinki, Finland</li>
+      <li>📍 20.10.2025 – Stockholm, Sweden</li>
+      <li>📍 05.11.2025 – Berlin, Germany</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Booking & media inquiries: 
+      <a href="mailto:info@codeeternal.com" style="color:#00adef;">info@codeeternal.com</a>
+    </p>
     <div class="socials">
       <a href="https://www.youtube.com/" target="_blank">
         <img src="icon-youtube.svg" alt="YouTube">
@@ -113,14 +165,11 @@
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Yhteystiedot</h2>
-    <p>Varaus- ja mediakyselyt: <a href="mailto:info@codeeternal.com">info@codeeternal.com</a></p>
-  </section>
-
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Code Eternal. Kaikki oikeudet pidätetään.</p>
+    <p>&copy; 2025 Code Eternal. All rights reserved.</p>
   </footer>
 
 </body>
 </html>
+
