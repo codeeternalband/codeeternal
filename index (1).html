@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Eternal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      background: url("banner.jpg") center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header img.logo {
+      max-width: 400px;
+      width: 80%;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #00adef;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .band img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .socials {
+      margin-top: 30px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+
+    .socials img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.2s;
+    }
+
+    .socials img:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 14px;
+      background-color: #111;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo-white.png" alt="Code Eternal Logo" class="logo">
+    <nav>
+      <a href="#band">Bändi</a>
+      <a href="#music">Musiikki</a>
+      <a href="#contact">Yhteystiedot</a>
+    </nav>
+  </header>
+
+  <section id="band" class="band">
+    <h2>Code Eternal</h2>
+    <p>Code Eternal on moderni metallibändi, joka yhdistää raskaat riffit ja melodisen soundin. 
+       Musiikkimme rakentuu energian, tunteiden ja tarinankerronnan ympärille.</p>
+    <img src="band.jpg" alt="Code Eternal band photo">
+  </section>
+
+  <section id="music">
+    <h2>Musiikki</h2>
+    <p>Tuleva debyyttialbumimme on työn alla – pysy kuulolla!</p>
+    <div class="socials">
+      <a href="https://www.youtube.com/" target="_blank">
+        <img src="icon-youtube.svg" alt="YouTube">
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="icon-instagram.svg" alt="Instagram">
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Yhteystiedot</h2>
+    <p>Varaus- ja mediakyselyt: <a href="mailto:info@codeeternal.com">info@codeeternal.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Code Eternal. Kaikki oikeudet pidätetään.</p>
+  </footer>
+
+</body>
+</html>
