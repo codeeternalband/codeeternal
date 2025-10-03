@@ -11,7 +11,7 @@
     * { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; }
     body {
-      font-family:'Rajdhani', sans-serif; /* leipätekstit */
+      font-family:'Rajdhani', sans-serif;
       background:#000; color:#fff; text-align:center;
     }
 
@@ -24,20 +24,26 @@
     }
     nav.navbar img.logo{ height:60px; width:auto; }
 
-    .nav-right{
-      display:flex; align-items:center;
-    }
+    .nav-right{ display:flex; align-items:center; }
 
     nav.navbar .nav-links a{
       font-family:'Russo One', sans-serif;
       text-transform:uppercase;
-      color:#fff; text-decoration:none; margin-left:25px;
-      font-size:18px; letter-spacing:2px; transition:color .2s;
+      color:#fff; text-decoration:none;
+      margin-left:18px;
+      font-size:22px;     /* isompi linkki */
+      letter-spacing:3px;
+      transition:color .2s;
     }
+    nav.navbar .nav-links a:first-child{ margin-left:0; }
     nav.navbar .nav-links a:hover{ color:var(--accent); }
 
-    .nav-socials a{ margin-left:15px; }
-    .nav-socials img{ width:24px; height:24px; transition:transform .2s; vertical-align:middle; }
+    .nav-socials a{ margin-left:20px; }
+    .nav-socials img{
+      width:32px; height:32px;   /* isommat ikonit */
+      transition:transform .2s;
+      vertical-align:middle;
+    }
     .nav-socials img:hover{ transform:scale(1.2); }
 
     /* HERO */
@@ -49,22 +55,15 @@
     }
 
     /* SECTIONS */
-    section{
-      padding:80px 20px; max-width:1000px; margin:0 auto;
-    }
+    section{ padding:80px 20px; max-width:1000px; margin:0 auto; }
     h2{
       font-family:'Russo One', sans-serif;
       text-transform:uppercase;
       margin:0 0 24px;
       font-size:40px; color:var(--accent); letter-spacing:2px;
     }
-    section p{
-      font-size:18px; line-height:1.6;
-      margin:0 auto; max-width:900px;
-    }
-    iframe{
-      width:100%; height:380px; border:none; margin-top:18px; border-radius:12px;
-    }
+    section p{ font-size:18px; line-height:1.6; margin:0 auto; max-width:900px; }
+    iframe{ width:100%; height:380px; border:none; margin-top:18px; border-radius:12px; }
 
     #music{ padding-top:60px; }
 
@@ -74,8 +73,8 @@
     @media (max-width:768px){
       nav.navbar{ padding:10px 15px; }
       nav.navbar img.logo{ height:45px; }
-      nav.navbar .nav-links a{ font-size:14px; margin-left:12px; }
-      .nav-socials img{ width:20px; height:20px; margin-left:10px; }
+      nav.navbar .nav-links a{ font-size:15px; margin-left:10px; letter-spacing:2px; }
+      .nav-socials img{ width:26px; height:26px; margin-left:12px; }
 
       .hero{ height:60vh; margin-top:60px; background-size:contain; }
       section{ padding:50px 16px; }
