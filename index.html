@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Code Eternal</title>
-  <!-- Modern Futuristic Font: Exo 2 -->
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500&family=Russo+One&display=swap" rel="stylesheet" />
   <style>
     :root { --accent:#00adef; }
     * { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; }
     body {
-      font-family:'Exo 2', Arial, sans-serif;
+      font-family:'Rajdhani', sans-serif; /* leipätekstit */
       background:#000; color:#fff; text-align:center;
     }
 
@@ -24,9 +24,10 @@
     }
     nav.navbar img.logo{ height:60px; width:auto; }
     nav.navbar .nav-links a{
+      font-family:'Russo One', sans-serif;
+      text-transform:uppercase;
       color:#fff; text-decoration:none; margin-left:25px;
-      font-size:18px; font-weight:600; letter-spacing:.5px;
-      transition:color .2s;
+      font-size:18px; letter-spacing:2px; transition:color .2s;
     }
     nav.navbar .nav-links a:hover{ color:var(--accent); }
 
@@ -43,12 +44,13 @@
       padding:80px 20px; max-width:1000px; margin:0 auto;
     }
     h2{
+      font-family:'Russo One', sans-serif;
+      text-transform:uppercase;
       margin:0 0 24px;
-      font-size:40px; color:var(--accent);
-      text-transform:uppercase; letter-spacing:1px;
+      font-size:40px; color:var(--accent); letter-spacing:2px;
     }
     section p{
-      font-size:19px; line-height:1.6;
+      font-size:18px; line-height:1.6;
       margin:0 auto; max-width:900px;
     }
     iframe{
@@ -129,7 +131,7 @@
   <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
-    <p style="font-size:19px">
+    <p style="font-size:18px">
       Booking &amp; media inquiries:
       <a href="mailto:codeeternalband@gmail.com" style="color:var(--accent)">codeeternalband@gmail.com</a>
     </p>
