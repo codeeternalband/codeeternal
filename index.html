@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Code Eternal</title>
-  <!-- Futuristic but clear font -->
-  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet" />
+  <!-- Modern Futuristic Font: Exo 2 -->
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root { --accent:#00adef; }
     * { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; }
     body {
-      font-family:'Audiowide', Arial, sans-serif;
+      font-family:'Exo 2', Arial, sans-serif;
       background:#000; color:#fff; text-align:center;
     }
 
@@ -25,27 +25,27 @@
     nav.navbar img.logo{ height:60px; width:auto; }
     nav.navbar .nav-links a{
       color:#fff; text-decoration:none; margin-left:25px;
-      font-size:18px; letter-spacing:1px; transition:color .2s;
+      font-size:18px; font-weight:600; letter-spacing:.5px;
+      transition:color .2s;
     }
     nav.navbar .nav-links a:hover{ color:var(--accent); }
 
-    /* HERO (banner) — same look in portrait & landscape */
+    /* HERO */
     .hero{
       background:#000 url("banner.jpg") center/contain no-repeat;
-      height:80vh;                 /* desktop: not too tall */
-      margin-top:70px;             /* space for fixed navbar */
+      height:80vh;
+      margin-top:70px;
       display:flex; align-items:center; justify-content:center;
     }
 
-    /* SECTIONS — tighter spacing */
+    /* SECTIONS */
     section{
-      padding:80px 20px;           /* was 120px: tighter now */
-      max-width:1000px; margin:0 auto;
+      padding:80px 20px; max-width:1000px; margin:0 auto;
     }
     h2{
       margin:0 0 24px;
       font-size:40px; color:var(--accent);
-      text-transform:uppercase; letter-spacing:2px;
+      text-transform:uppercase; letter-spacing:1px;
     }
     section p{
       font-size:19px; line-height:1.6;
@@ -55,7 +55,6 @@
       width:100%; height:380px; border:none; margin-top:18px; border-radius:12px;
     }
 
-    /* Music slightly closer to Bio */
     #music{ padding-top:60px; }
 
     .socials{ margin-top:24px; }
@@ -71,12 +70,7 @@
       nav.navbar img.logo{ height:45px; }
       nav.navbar .nav-links a{ font-size:14px; margin-left:12px; }
 
-      .hero{
-        height:60vh;              /* portrait & landscape mobile: consistent look */
-        margin-top:60px;
-        background-size:contain;  /* ensure full image visible */
-      }
-
+      .hero{ height:60vh; margin-top:60px; background-size:contain; }
       section{ padding:50px 16px; }
       #music{ padding-top:40px; }
       h2{ font-size:26px; margin-bottom:18px; }
@@ -98,7 +92,7 @@
     </div>
   </nav>
 
-  <!-- Hero / Banner -->
+  <!-- Hero -->
   <div class="hero"></div>
 
   <!-- Biography -->
