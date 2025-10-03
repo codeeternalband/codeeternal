@@ -15,14 +15,8 @@
       font-family:'Rajdhani', sans-serif;
       font-size:20px;
       color:#fff; text-align:center;
+      background:#000;
       -webkit-tap-highlight-color: transparent;
-
-      /* GRUNGE TAUSTA */
-      background-color:#000;
-      background-image:url("dark-grunge.jpg");
-      background-size:cover;
-      background-repeat:no-repeat;
-      background-attachment:fixed;
     }
 
     /* NAVBAR */
@@ -58,17 +52,17 @@
     /* HERO */
     .hero{
       background:#000 url("banner.jpg") center/contain no-repeat;
-      height:80vh;
-      margin-top:70px;
+      height:60vh;             /* pienempi korkeus */
+      margin-top:70px;         /* tilaa naville */
       display:flex; align-items:center; justify-content:center;
     }
 
     /* SECTIONS */
-    section{ padding:80px 20px; max-width:1000px; margin:0 auto; }
+    section{ padding:60px 20px; max-width:1000px; margin:0 auto; }
     h2{
       font-family:'Orbitron', sans-serif;
       text-transform:uppercase;
-      margin:0 0 24px;
+      margin:0 0 20px;
       font-size:30px;
       color:var(--accent);
       letter-spacing:2px;
@@ -81,8 +75,9 @@
       width:100%; height:380px; border:none; margin-top:18px; border-radius:12px;
     }
 
-    #music{ padding-top:60px; }
-    footer{ padding:18px; font-size:14px; background:rgba(0,0,0,0.85); margin-top:40px; }
+    #music{ padding-top:40px; }
+
+    footer{ padding:18px; font-size:14px; background:#111; margin-top:30px; }
 
     /* MOBILE */
     @media (max-width:768px){
@@ -92,10 +87,11 @@
       .nav-socials{ margin-left:25px; }
       .nav-socials img{ width:30px; height:30px; }
 
-      .hero{ height:60vh; margin-top:60px; background-size:contain; }
-      section{ padding:50px 16px; }
-      #music{ padding-top:40px; }
-      h2{ font-size:22px; margin-bottom:18px; }
+      .hero{ height:50vh; margin-top:60px; background-size:contain; }
+
+      section{ padding:40px 16px; }
+      #music{ padding-top:30px; }
+      h2{ font-size:22px; margin-bottom:16px; }
       section p{ font-size:17px; }
       iframe{ height:220px; }
     }
