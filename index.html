@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Code Eternal</title>
-  <!-- Google Font: Orbitron -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Google Font: Exo 2 -->
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{
       --accent:#00adef;
@@ -13,7 +13,7 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:'Orbitron', Arial, sans-serif;
+      font-family:'Exo 2', Arial, sans-serif;
       background:#000;
       color:#fff;
       scroll-behavior:smooth;
@@ -41,8 +41,9 @@
       color:#fff;
       text-decoration:none;
       margin:0 15px;
-      font-weight:bold;
+      font-weight:600;
       font-size:20px;
+      letter-spacing:0.5px;
     }
     nav a:hover{color:var(--accent)}
 
@@ -57,7 +58,7 @@
       font-size:42px;
       color:var(--accent);
       text-transform:uppercase;
-      letter-spacing:.5px;
+      letter-spacing:1px;
     }
     section p{
       font-size:20px;
@@ -73,9 +74,15 @@
       border-radius:12px;
     }
 
-    /* Music closer to Bio */
-    #music {
-      padding-top: 60px;
+    /* Custom cover section */
+    .cover-art{
+      max-width:500px;
+      margin:0 auto 60px;
+    }
+    .cover-art img{
+      width:100%;
+      border-radius:12px;
+      box-shadow:0 0 25px rgba(0,0,0,.8);
     }
 
     .socials{margin-top:30px}
@@ -109,10 +116,10 @@
         margin:0 6px;
       }
       section{padding:70px 16px}
-      #music { padding-top:40px; } /* vielä tiiviimpi mobiilissa */
       h2{font-size:26px}
       section p{font-size:15px}
       iframe{height:220px}
+      .cover-art{margin-bottom:40px}
     }
   </style>
 </head>
@@ -142,12 +149,15 @@
     </p>
   </section>
 
+  <!-- Cover Art (new single) -->
+  <div class="cover-art">
+    <img src="Brace2.jpg" alt="Code Eternal - Brace Yourself cover art" />
+  </div>
+
   <!-- Music -->
   <section id="music">
     <h2>Music</h2>
     <p>Listen to our latest single <em>Brace Yourself</em> and more on Spotify:</p>
-    <img src="Brace2.jpg" alt="Code Eternal - Brace Yourself cover art"
-         style="max-width:400px;width:100%;border-radius:12px;box-shadow:0 0 25px rgba(0,0,0,.8);margin:0 auto 30px;display:block;" />
     <iframe
       src="https://open.spotify.com/embed/artist/5vuhEK6GfC6Zz0VJntD7qE"
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
@@ -158,7 +168,6 @@
   <section id="videos">
     <h2>Videos</h2>
     <p>Watch our music videos below:</p>
-    <!-- Replace with your actual video IDs -->
     <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
     <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
     <div class="youtube-channel">
@@ -199,4 +208,3 @@
   </footer>
 </body>
 </html>
-
