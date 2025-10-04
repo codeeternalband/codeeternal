@@ -63,9 +63,13 @@ nav.navbar img.logo{ height:60px; width:auto; }
 }
 .menu-btn[aria-expanded="true"]{ border-color:var(--accent); }
 
-/* HERO (desktop oletuskuva) */
+/* HERO (desktop oletus) */
 .hero{
-  background:#000 url("banner.jpg") center/cover no-repeat;
+  background-color:#000;
+  background-image:url("banner.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
   height:60vh;
   margin-top:70px;
   display:flex;
@@ -139,16 +143,20 @@ footer{
   .nav-socials a{ margin:0 12px 0 0; }
   .nav-socials img{ width:30px; height:30px; }
 
-  /* 🔧 HERO – käytä mobiilikuvaa */
+  /* 🔧 HERO – vaihda mobiilikuvaan */
   .hero{
-    background:#000 url("banner-mobile.png") center/cover no-repeat;
+    background-image:url("banner-mobile.png") !important;
+    background-color:#000;
+    background-repeat:no-repeat;
+    background-size:cover !important;
+    background-position:65% 45% !important;
     height:42vh;
     margin-top:55px;   /* pienempi yläväli navbarin jälkeen */
-    margin-bottom:0;   /* ei ylimääräistä väliä ennen seuraavaa */
+    margin-bottom:0;   /* ei väliä ennen seuraavaa osiota */
   }
 
-  /* BIOGRAPHY alkaa heti bannerin jälkeen */
-  #biography { padding-top: 16px; }
+  /* BIOGRAPHY heti bannerin jälkeen */
+  #biography { padding-top:16px; }
 
   section{ padding:40px 16px; }
   #music{ padding-top:25px; }
@@ -158,9 +166,9 @@ footer{
 
   /* 🔧 Fix: Music–Tour väli */
   #music iframe {
-    margin-bottom: 0;
-    display: block;
+    margin-bottom:0;
+    display:block;
   }
-  #music { padding-bottom: 10px; }
-  #tour { padding-top: 20px; }
+  #music { padding-bottom:10px; }
+  #tour { padding-top:20px; }
 }
