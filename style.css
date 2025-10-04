@@ -139,10 +139,31 @@ footer{
   .nav-socials a{ margin:0 12px 0 0; }
   .nav-socials img{ width:30px; height:30px; }
 
-  .hero{ height:50vh; margin-top:60px; background-size:contain; }
+  /* 🔧 HERO – vähemmän mustaa tilaa ylä- ja alapuolella */
+  .hero{
+    height:45vh;              /* vähän matalampi */
+    margin-top:55px;          /* vähemmän ylätilaa navbarin jälkeen */
+    margin-bottom:10px;       /* vähemmän tilaa ennen seuraavaa osiota */
+    background-size:contain;  
+    background-position:center;
+  }
+
+  /* SECTIONS */
   section{ padding:40px 16px; }
-  #music{ padding-top:30px; }
+  #music{ padding-top:25px; } /* hieman pienempi väli bannerin jälkeen */
   h2{ font-size:22px; margin-bottom:16px; }
   section p{ font-size:17px; }
   iframe{ height:220px; }
+
+  /* 🔧 Fix: pienennä väliä Music–Tour välillä */
+  #music iframe {
+    margin-bottom: 0;
+    display: block;
+  }
+  #music { 
+    padding-bottom: 10px; /* vähemmän alatilaa */
+  }
+  #tour { 
+    padding-top: 20px; /* vähemmän ylätilaa */
+  }
 }
