@@ -110,7 +110,7 @@ footer{
   margin-top:30px;
 }
 
-/* MOBILE */
+/* ===== MOBILE ===== */
 @media (max-width:768px){
   nav.navbar{ padding:10px 15px; }
   nav.navbar img.logo{ height:45px; }
@@ -139,31 +139,31 @@ footer{
   .nav-socials a{ margin:0 12px 0 0; }
   .nav-socials img{ width:30px; height:30px; }
 
-  /* 🔧 HERO – vähemmän mustaa tilaa ylä- ja alapuolella */
+  /* 🔧 HERO – ei mustia palkkeja, tiiviimpi ylä/ala */
   .hero{
-    height:45vh;              /* vähän matalampi */
-    margin-top:55px;          /* vähemmän ylätilaa navbarin jälkeen */
-    margin-bottom:10px;       /* vähemmän tilaa ennen seuraavaa osiota */
-    background-size:contain;  
-    background-position:center;
+    background-size: cover;       /* contain → cover */
+    background-position: 65% 45%; /* siirrä vähän oikealle ja ylös */
+    height:42vh;                  /* matalampi korkeus */
+    margin-top:55px;              /* vähemmän tilaa navin jälkeen */
+    margin-bottom:0;              /* nollaa väli ennen seuraavaa */
   }
 
-  /* SECTIONS */
+  /* BIOGRAPHY alkaa heti kiinni hero-kuvaan */
+  #biography { 
+    padding-top: 16px; 
+  }
+
   section{ padding:40px 16px; }
-  #music{ padding-top:25px; } /* hieman pienempi väli bannerin jälkeen */
+  #music{ padding-top:25px; }
   h2{ font-size:22px; margin-bottom:16px; }
   section p{ font-size:17px; }
   iframe{ height:220px; }
 
-  /* 🔧 Fix: pienennä väliä Music–Tour välillä */
+  /* 🔧 Fix: Music–Tour väli */
   #music iframe {
     margin-bottom: 0;
     display: block;
   }
-  #music { 
-    padding-bottom: 10px; /* vähemmän alatilaa */
-  }
-  #tour { 
-    padding-top: 20px; /* vähemmän ylätilaa */
-  }
+  #music { padding-bottom: 10px; }
+  #tour { padding-top: 20px; }
 }
