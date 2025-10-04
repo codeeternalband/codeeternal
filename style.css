@@ -63,9 +63,9 @@ nav.navbar img.logo{ height:60px; width:auto; }
 }
 .menu-btn[aria-expanded="true"]{ border-color:var(--accent); }
 
-/* HERO */
+/* HERO (desktop oletuskuva) */
 .hero{
-  background:#000 url("banner.jpg") center/contain no-repeat;
+  background:#000 url("banner.jpg") center/cover no-repeat;
   height:60vh;
   margin-top:70px;
   display:flex;
@@ -139,19 +139,16 @@ footer{
   .nav-socials a{ margin:0 12px 0 0; }
   .nav-socials img{ width:30px; height:30px; }
 
-  /* 🔧 HERO – ei mustia palkkeja, tiiviimpi ylä/ala */
+  /* 🔧 HERO – käytä mobiilikuvaa */
   .hero{
-    background-size: cover;       /* contain → cover */
-    background-position: 65% 45%; /* siirrä vähän oikealle ja ylös */
-    height:42vh;                  /* matalampi korkeus */
-    margin-top:55px;              /* vähemmän tilaa navin jälkeen */
-    margin-bottom:0;              /* nollaa väli ennen seuraavaa */
+    background:#000 url("banner-mobile.png") center/cover no-repeat;
+    height:42vh;
+    margin-top:55px;   /* pienempi yläväli navbarin jälkeen */
+    margin-bottom:0;   /* ei ylimääräistä väliä ennen seuraavaa */
   }
 
-  /* BIOGRAPHY alkaa heti kiinni hero-kuvaan */
-  #biography { 
-    padding-top: 16px; 
-  }
+  /* BIOGRAPHY alkaa heti bannerin jälkeen */
+  #biography { padding-top: 16px; }
 
   section{ padding:40px 16px; }
   #music{ padding-top:25px; }
