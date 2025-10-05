@@ -164,7 +164,7 @@ footer{
   }
   .nav-links a:hover{ background:rgba(255,255,255,.06); color:var(--accent); }
 
-  .nav-socials{ display:flex; justify-content:flex-start; gap:12px; padding:10px 14px 4px; margin-left:0; }
+  .nav-socials{ display:flex; justify-content:flex-start; gap:12px; padding:10px 14px 4px; margin-left:-10; }
   .nav-socials img{ width:28px; height:28px; opacity:.9; }
 
   /* Hero mobiilissa – sama kuva, mutta isompi */
