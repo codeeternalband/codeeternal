@@ -24,6 +24,7 @@ nav.navbar{
 }
 nav.navbar img.logo{ height:60px; width:auto; }
 .nav-right{ display:flex; align-items:center; }
+
 .nav-links a{
   font-family:'Orbitron', sans-serif;
   text-transform:uppercase;
@@ -35,7 +36,12 @@ nav.navbar img.logo{ height:60px; width:auto; }
   transition:color .2s;
 }
 .nav-links a:hover{ color:var(--accent); }
-.nav-socials{ margin-left:40px; display:flex; align-items:center; }
+
+.nav-socials{
+  margin-left:40px;
+  display:flex;
+  align-items:center;
+}
 .nav-socials a{ margin-left:20px; }
 .nav-socials img{ width:38px; height:38px; transition:transform .2s; }
 .nav-socials img:hover{ transform:scale(1.2); }
@@ -77,7 +83,7 @@ nav.navbar img.logo{ height:60px; width:auto; }
   display:block;
   width:100%;
   height:auto;
-  max-height:clamp(460px, 58vh, 820px); /* isompi kuva */
+  max-height:clamp(460px, 58vh, 820px);
   object-fit:contain;
   object-position:center top;
   background:#000;
@@ -124,14 +130,57 @@ footer{
 /* ===== MOBILE ===== */
 @media (max-width:768px){
   /* pienempi fontti mobiiliin */
-  body{ font-size:14px; line-height:1.2; }
+  body{ font-size:14px; line-height:1.4; }
 
   nav.navbar{ padding:10px 15px; }
   nav.navbar img.logo{ height:45px; }
 
-  .menu-btn{ display:inline-flex; }
-  .nav-right{ align-items:flex-start; }
+  /* Mobile grid layout: logo | hamburger | socials */
+  nav.navbar{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+  }
+  .nav-right{ display:contents; }
 
+  /* Simppelempi hamburger, keskitetty */
+  .menu-btn{
+    justify-self:center;
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+    padding:8px !important;
+    gap:0 !important;
+  }
+  .menu-btn span{ display:none; } /* piilota teksti */
+  .menu-btn::before,
+  .menu-btn::after{
+    width:22px;
+    height:2px;
+    background:#fff;
+    box-shadow:0 -7px 0 0 currentColor, 0 7px 0 0 currentColor;
+    opacity:0.95;
+  }
+  .menu-btn[aria-expanded="true"]::before{
+    box-shadow:none;
+    transform:rotate(45deg);
+  }
+  .menu-btn[aria-expanded="true"]::after{
+    transform:rotate(-45deg) translateY(-2px);
+    width:22px;
+  }
+
+  /* Social-ikonit vasemmalle päin */
+  .nav-socials{
+    justify-self:end;
+    transform:translateX(-18px);
+    padding-right:8px;
+    margin-left:0;
+  }
+  .nav-socials a{ margin-left:12px; }
+  .nav-socials img{ width:26px; height:26px; }
+
+  /* Dropdown menu */
   .nav-links{
     position:absolute;
     right:12px; top:64px;
@@ -164,15 +213,12 @@ footer{
   }
   .nav-links a:hover{ background:rgba(255,255,255,.06); color:var(--accent); }
 
-  .nav-socials{ display:flex; justify-content:flex-start; gap:12px; padding:10px 14px 4px; margin-left:-10; }
-  .nav-socials img{ width:28px; height:28px; opacity:.9; }
-
   /* Hero mobiilissa – sama kuva, mutta isompi */
   .hero{ margin-top:55px; }
   .hero img{
     object-fit:contain;
     object-position:center top;
-    max-height:54vh; /* aiemmin 48vh → hieman isompi */
+    max-height:54vh;
   }
 
   /* Kompaktimmat otsikot ja tekstit */
