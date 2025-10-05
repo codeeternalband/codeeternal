@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Code Eternal</title>
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet" />
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css?v=1" />
 </head>
 <body>
 
@@ -15,7 +16,9 @@
   <nav class="navbar">
     <img src="logo-white.png" alt="Code Eternal Logo" class="logo" />
     <div class="nav-right">
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu">☰ Menu</button>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav" aria-label="Avaa valikko">
+        <span>Menu</span>
+      </button>
       <div class="nav-links" id="primaryNav">
         <a href="#biography">Biography</a>
         <a href="#music">Music</a>
@@ -23,18 +26,25 @@
         <a href="#contact">Contact</a>
       </div>
       <div class="nav-socials">
-        <a href="https://www.instagram.com/code_eternal/" target="_blank" rel="noopener">
-          <img src="icon-instagram.svg" alt="Instagram" />
+        <a href="https://www.instagram.com/code_eternal/" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="icon-instagram.svg" alt="" />
         </a>
-        <a href="https://www.youtube.com/channel/UC-vPF50rdRidDn1fiP3GvuA" target="_blank" rel="noopener">
-          <img src="icon-youtube.svg" alt="YouTube" />
+        <a href="https://www.youtube.com/channel/UC-vPF50rdRidDn1fiP3GvuA" target="_blank" rel="noopener" aria-label="YouTube">
+          <img src="icon-youtube.svg" alt="" />
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <div class="hero"></div>
+  <!-- Hero (picture = varma lataus ja mobiilille eri kuva) -->
+  <div class="hero">
+    <picture>
+      <!-- mobiili: oma kuva -->
+      <source media="(max-width: 768px)" srcset="banner-mobile.png" />
+      <!-- fallback + desktop -->
+      <img src="banner.jpg" alt="Code Eternal band" class="hero-img" />
+    </picture>
+  </div>
 
   <!-- Biography -->
   <section id="biography">
@@ -54,7 +64,8 @@
     <p>Listen to our latest single <em>Brace Yourself</em> and more on Spotify:</p>
     <iframe
       src="https://open.spotify.com/embed/artist/5vuhEK6GfC6Zz0VJntD7qE"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      title="Spotify Player">
     </iframe>
   </section>
 
@@ -81,18 +92,20 @@
   </footer>
 
   <script>
-    // Minimal mobile nav toggle only
+    // Mobiilivalikko + body scroll lock
     const btn = document.getElementById('menuBtn');
     const nav = document.getElementById('primaryNav');
     btn?.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       btn.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
     });
-    // close on link click (mobile)
+    // Sulje kun linkkiä klikataan
     nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
       if (nav.classList.contains('open')) {
         nav.classList.remove('open');
         btn.setAttribute('aria-expanded','false');
+        document.body.style.overflow = '';
       }
     }));
   </script>
