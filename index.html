@@ -8,7 +8,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet" />
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=1" />
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 <body>
 
@@ -36,14 +36,9 @@
     </div>
   </nav>
 
-  <!-- Hero (picture = varma lataus ja mobiilille eri kuva) -->
+  <!-- Hero -->
   <div class="hero">
-    <picture>
-      <!-- mobiili: oma kuva -->
-      <source media="(max-width: 768px)" srcset="banner-mobile.png" />
-      <!-- fallback + desktop -->
-      <img src="banner.jpg" alt="Code Eternal band" class="hero-img" />
-    </picture>
+    <img src="banner.jpg" alt="Code Eternal band" class="hero-img" />
   </div>
 
   <!-- Biography -->
@@ -92,7 +87,7 @@
   </footer>
 
   <script>
-    // Mobiilivalikko + body scroll lock
+    // Mobiilivalikko
     const btn = document.getElementById('menuBtn');
     const nav = document.getElementById('primaryNav');
     btn?.addEventListener('click', () => {
@@ -100,7 +95,6 @@
       btn.setAttribute('aria-expanded', String(open));
       document.body.style.overflow = open ? 'hidden' : '';
     });
-    // Sulje kun linkkiä klikataan
     nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
       if (nav.classList.contains('open')) {
         nav.classList.remove('open');
