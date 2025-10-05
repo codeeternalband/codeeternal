@@ -24,19 +24,17 @@ nav.navbar{
 }
 nav.navbar img.logo{ height:60px; width:auto; }
 .nav-right{ display:flex; align-items:center; }
-
-/* Links */
 .nav-links a{
   font-family:'Orbitron', sans-serif;
   text-transform:uppercase;
-  color:#fff; text-decoration:none;
+  color:#fff;
+  text-decoration:none;
   margin-left:18px;
-  font-size:21px; letter-spacing:2px;
+  font-size:21px;
+  letter-spacing:2px;
   transition:color .2s;
 }
 .nav-links a:hover{ color:var(--accent); }
-
-/* Socials */
 .nav-socials{ margin-left:40px; display:flex; align-items:center; }
 .nav-socials a{ margin-left:20px; }
 .nav-socials img{ width:38px; height:38px; transition:transform .2s; }
@@ -59,8 +57,6 @@ nav.navbar img.logo{ height:60px; width:auto; }
   color:var(--accent);
 }
 .menu-btn:active{ transform:scale(.98); }
-
-/* Hamburger icon with CSS lines */
 .menu-btn::before,
 .menu-btn::after{
   content:""; width:18px; height:2px; background:currentColor; display:block;
@@ -70,46 +66,59 @@ nav.navbar img.logo{ height:60px; width:auto; }
 .menu-btn[aria-expanded="true"]::before{ box-shadow:none; transform:rotate(45deg); }
 .menu-btn[aria-expanded="true"]::after{ transform:rotate(-45deg) translateY(-2px); width:18px; }
 
-/* ===== HERO (picture + img) ===== */
+/* ===== HERO ===== */
 .hero{
-  position:relative;
-  margin-top:70px; margin-bottom:0;
+  margin-top:70px;
   background:#000;
   display:flex; justify-content:center; align-items:center;
   overflow:hidden;
 }
-.hero picture, .hero img{
-  display:block; width:100%; height:auto;
-  max-height:clamp(420px, 52vh, 680px);
-  object-fit:cover; object-position:center;
+.hero img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:clamp(420px, 52vh, 760px);
+  object-fit:contain;
+  object-position:center top;
+  background:#000;
 }
-/* Banner → Biography väli näkyväksi */
-#biography{ padding-top:24px; }
+
+/* Lisää tilaa bannerin ja biographyn väliin */
+#biography{ padding-top:40px; }
 
 /* ===== SECTIONS ===== */
 section{
   padding:60px 20px;
   max-width:1000px; margin:0 auto;
-  scroll-margin-top:90px; /* anchor offset: otsikko ei jää navin alle */
+  scroll-margin-top:90px;
 }
 h2{
   font-family:'Orbitron', sans-serif;
   text-transform:uppercase;
   margin:0 0 20px;
-  font-size:30px; color:var(--accent); letter-spacing:2px;
+  font-size:30px;
+  color:var(--accent);
+  letter-spacing:2px;
 }
 section p{
-  font-size:20px; line-height:1.7;
-  margin:0 auto; max-width:900px;
+  font-size:20px;
+  line-height:1.7;
+  margin:0 auto;
+  max-width:900px;
 }
 iframe{
-  width:100%; height:380px;
-  border:none; margin-top:18px; border-radius:12px;
+  width:100%;
+  height:380px;
+  border:none;
+  margin-top:18px;
+  border-radius:12px;
 }
 #music{ padding-top:40px; }
-
 footer{
-  padding:18px; font-size:14px; background:#111; margin-top:30px;
+  padding:18px;
+  font-size:14px;
+  background:#111;
+  margin-top:30px;
 }
 
 /* ===== MOBILE ===== */
@@ -117,15 +126,17 @@ footer{
   nav.navbar{ padding:10px 15px; }
   nav.navbar img.logo{ height:45px; }
 
-  /* Show hamburger */
   .menu-btn{ display:inline-flex; }
   .nav-right{ align-items:flex-start; }
 
-  /* Mobile dropdown panel */
   .nav-links{
-    position:absolute; right:12px; top:64px;
+    position:absolute;
+    right:12px; top:64px;
     width:min(86vw, 360px);
-    display:none; flex-direction:column; align-items:stretch; gap:6px;
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:6px;
     padding:12px;
     border:1px solid rgba(255,255,255,.10);
     border-radius:14px;
@@ -136,9 +147,16 @@ footer{
   }
   .nav-links.open{ display:flex; }
   .nav-links a{
-    width:100%; text-align:left; padding:12px 14px; border-radius:10px;
-    font-family:'Orbitron', sans-serif; letter-spacing:1.5px; text-transform:uppercase;
-    font-size:15px; color:#fff; opacity:.95;
+    width:100%;
+    text-align:left;
+    padding:12px 14px;
+    border-radius:10px;
+    font-family:'Orbitron', sans-serif;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-size:15px;
+    color:#fff;
+    opacity:.95;
     transition:background .15s, color .15s, transform .06s;
   }
   .nav-links a:hover{ background:rgba(255,255,255,.06); color:var(--accent); }
@@ -146,22 +164,18 @@ footer{
   .nav-socials{ display:flex; justify-content:flex-start; gap:12px; padding:10px 14px 4px; margin-left:0; }
   .nav-socials img{ width:28px; height:28px; opacity:.9; }
 
-  /* Mobile hero: näytä koko bändi, musta tila minimiin */
+  /* Hero mobiilissa – sama kuva, vähän matalampi */
   .hero{ margin-top:55px; }
   .hero img{
-    object-fit:contain;         /* näyttää koko kuvan */
-    object-position:center top; /* hieman ylös → vähemmän mustaa alhaalla */
-    max-height:46vh;            /* ei liian korkea */
-    background:#000;            /* pienet palkit sulautuu mustaan */
+    object-fit:contain;
+    object-position:center top;
+    max-height:48vh;
   }
 
-  /* Tiiviit välit */
-  #biography{ padding-top:16px; }
-  section{ padding:40px 16px; scroll-margin-top:70px; } /* pienempi anchor offset mobiilissa */
+  #biography{ padding-top:28px; }
+  section{ padding:40px 16px; scroll-margin-top:70px; }
   #music{ padding-top:20px; padding-bottom:10px; }
   iframe{ height:220px; }
-
-  /* Music ↔ Tour väli */
   #music iframe{ margin-bottom:0; display:block; }
   #tour{ padding-top:20px; }
 }
