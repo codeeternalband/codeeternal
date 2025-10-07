@@ -7,12 +7,13 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet" />
+
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=12" />
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <img src="logo-white.png" alt="Code Eternal Logo" class="logo" />
     <div class="nav-right">
@@ -27,44 +28,70 @@
       </div>
       <div class="nav-socials">
         <a href="https://www.instagram.com/code_eternal/" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="icon-instagram.svg" alt="" />
+          <img src="icon-instagram.svg" alt="Instagram" />
         </a>
         <a href="https://www.youtube.com/channel/UC-vPF50rdRidDn1fiP3GvuA" target="_blank" rel="noopener" aria-label="YouTube">
-          <img src="icon-youtube.svg" alt="" />
+          <img src="icon-youtube.svg" alt="YouTube" />
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <div class="hero">
     <img src="banner.jpg" alt="Code Eternal band" class="hero-img" />
   </div>
 
-  <!-- Biography -->
+  <!-- BIOGRAPHY -->
   <section id="biography">
     <h2>Biography</h2>
     <p>
-Code Eternal is a prog-influenced metal band from South Ostrobothnia, Finland. The band
-was founded in 2021 by award-winning guitarist Juho Ranta-Maunus. He gathered the best
-players from his area and already in 2022 they released their debut EP ‘Sixth Wave’. Now
-three years later they return stronger than ever with ‘Brace Yourself’ which is the first single
-from their debut album.
+      <strong>South Ostrobothnia, Finland</strong> – Progressive metal outfit <strong>Code Eternal</strong> are set to make waves once again with the release of their brand-new single 
+      <em>“Brace Yourself”</em> on October 10, 2025. This marks the first single from their long-awaited debut album.
+    </p>
 
-'Brace Yourself' is the first single from their debut album, inspired by the idea of AI evolving
-into a self-defending force that could threaten humanity. The track is very dynamic and fuses
-prog metal, heavy metal, and funk into a fresh and powerful sound, with rhythmic synths
-that add depth and momentum.
+    <p>
+      Fronted by prodigious guitarist <strong>Juho Ranta-Maunus</strong> — who at just 13 years old won Guitar World Magazine’s 
+      <em>“Young Guitarist of the Year”</em> in 2020 — the band has been steadily building a reputation as one of Finland’s most promising new forces in metal. 
+      Founded in 2021, Code Eternal quickly turned heads with their 2022 debut EP <em>Sixth Wave</em>. 
+      Now, three years later, they return stronger, sharper, and more ambitious than ever.
+    </p>
 
-Vocals - Teemu Dahlman
-Guitars - Juho Ranta-Maunus
-Bass - Aku Vuorela
-Drums - Marlon Mäkelä
-Matias Källi - Keyboards
+    <p>
+      <em>“Brace Yourself”</em> dives into thought-provoking territory, drawing inspiration from the concept of artificial intelligence evolving into a 
+      self-defending entity that could challenge humanity’s existence. Musically, the track is a dynamic blend of progressive metal, heavy riffs, 
+      and funk-infused grooves, elevated by pulsating synth layers that add depth and urgency to the band’s sound.
+    </p>
+
+    <blockquote style="font-style: italic; color: #ccc; margin: 20px auto; max-width: 800px;">
+      “This track really shows where we’re heading as a band,” says Ranta-Maunus. “It’s heavy, complex, but also has a groove and energy that feels alive. 
+      It’s a warning and an invitation at the same time.”
+    </blockquote>
+
+    <p>
+      With their unique ability to fuse technical precision with raw intensity, Code Eternal are carving their own path in the modern metal landscape. 
+      <em>“Brace Yourself”</em> is only the beginning of what promises to be a standout debut album.
+    </p>
+
+    <div style="margin-top: 24px; text-align: center;">
+      <h3 style="font-family:'Orbitron', sans-serif; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px;">
+        Code Eternal Lineup
+      </h3>
+      <p>
+        Vocals – Teemu Dahlman<br>
+        Guitars – Juho Ranta-Maunus<br>
+        Bass – Aku Vuorela<br>
+        Drums – Marlon Mäkelä<br>
+        Keyboards – Matias Källi
+      </p>
+    </div>
+
+    <p style="margin-top: 16px; font-size: 0.95em; color: #ccc;">
+      <em>Brace Yourself</em> will be available on all major streaming platforms October 10, 2025.
     </p>
   </section>
 
-  <!-- Music -->
+  <!-- MUSIC -->
   <section id="music">
     <h2>Music</h2>
     <p>Listen to our latest single <em>Brace Yourself</em> and more on Spotify:</p>
@@ -75,7 +102,7 @@ Matias Källi - Keyboards
     </iframe>
   </section>
 
-  <!-- Tour -->
+  <!-- TOUR -->
   <section id="tour">
     <h2>Tour</h2>
     <p>
@@ -84,7 +111,7 @@ Matias Källi - Keyboards
     </p>
   </section>
 
-  <!-- Contact -->
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
     <p>
@@ -97,22 +124,26 @@ Matias Källi - Keyboards
     <p>&copy; 2025 Code Eternal. All rights reserved.</p>
   </footer>
 
+  <!-- MENU SCRIPT -->
   <script>
-    // Mobiilivalikko
     const btn = document.getElementById('menuBtn');
     const nav = document.getElementById('primaryNav');
+
     btn?.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       btn.setAttribute('aria-expanded', String(open));
       document.body.style.overflow = open ? 'hidden' : '';
     });
-    nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      if (nav.classList.contains('open')) {
-        nav.classList.remove('open');
-        btn.setAttribute('aria-expanded','false');
-        document.body.style.overflow = '';
-      }
-    }));
+
+    nav?.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        if (nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      })
+    );
   </script>
 </body>
 </html>
