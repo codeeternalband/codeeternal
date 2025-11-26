@@ -1,146 +1,291 @@
-/* === BASE === */
+/* === CODE ETERNAL STYLES === */
 :root { --accent:#00adef; }
 * { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
 body {
   font-family:'Rajdhani', sans-serif;
-  background:#000;
+  font-size:20px;
   color:#fff;
   text-align:center;
+  background:#000;
+  -webkit-tap-highlight-color:transparent;
 }
 
-/* === NAVBAR === */
+/* ===== NAVBAR ===== */
 nav.navbar{
   position:fixed;
-  top:0;left:0;width:100%;
+  top:0; left:0; width:100%;
+  background:rgba(0,0,0,0.9);
+  border-bottom:1px solid #111;
+  display:flex; justify-content:space-between; align-items:center;
   padding:12px 30px;
-  background:rgba(0,0,0,.9);
-  display:flex;justify-content:space-between;align-items:center;
   z-index:1000;
+  box-shadow:0 2px 12px rgba(0,0,0,0.6);
 }
-.logo{height:60px;}
+nav.navbar img.logo{ height:60px; width:auto; }
+.nav-right{ display:flex; align-items:center; }
 
 .nav-links a{
-  font-family:'Orbitron',sans-serif;
+  font-family:'Orbitron', sans-serif;
   text-transform:uppercase;
   color:#fff;
-  margin-left:18px;
   text-decoration:none;
-  font-size:20px;
+  margin-left:18px;
+  font-size:21px;
+  letter-spacing:2px;
+  transition:color .2s;
 }
-.nav-links a:hover{color:var(--accent);}
+.nav-links a:hover{ color:var(--accent); }
 
-.menu-btn{display:none;}
+.nav-socials{
+  margin-left:40px;
+  display:flex;
+  align-items:center;
+}
+.nav-socials a{ margin-left:20px; }
+.nav-socials img{ width:38px; height:38px; transition:transform .2s; }
+.nav-socials img:hover{ transform:scale(1.2); }
 
-/* === HERO === */
-.hero{margin-top:70px;}
-.hero img{width:100%;height:auto;object-fit:contain;}
+/* ===== HAMBURGER BUTTON ===== */
+.menu-btn{
+  display:none; align-items:center; gap:10px;
+  padding:10px 14px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:#0a0a0a; color:#fff;
+  font-family:'Orbitron', sans-serif; font-size:14px;
+  letter-spacing:2px; text-transform:uppercase;
+  cursor:pointer;
+  transition:border-color .2s, box-shadow .2s, color .2s, background .2s, transform .12s;
+}
+.menu-btn:hover{
+  border-color:var(--accent);
+  box-shadow:0 0 18px rgba(0,173,239,.25);
+  color:var(--accent);
+}
+.menu-btn:active{ transform:scale(.98); }
+.menu-btn::before,
+.menu-btn::after{
+  content:""; width:18px; height:2px; background:currentColor; display:block;
+  transition:transform .25s ease, opacity .2s ease, width .2s ease, box-shadow .2s;
+}
+.menu-btn::before{ box-shadow:0 -6px 0 0 currentColor, 0 6px 0 0 currentColor; }
+.menu-btn[aria-expanded="true"]::before{ box-shadow:none; transform:rotate(45deg); }
+.menu-btn[aria-expanded="true"]::after{ transform:rotate(-45deg) translateY(-2px); width:18px; }
 
-/* === SECTIONS === */
+/* ===== HERO ===== */
+.hero{
+  margin-top:70px;
+  background:#000;
+  display:flex; justify-content:center; align-items:center;
+  overflow:hidden;
+}
+.hero img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:clamp(460px, 58vh, 820px);
+  object-fit:contain;
+  object-position:center top;
+  background:#000;
+}
+
+/* Lisää tilaa bannerin ja biographyn väliin */
+#biography{ padding-top:40px; }
+
+/* ===== SECTIONS ===== */
 section{
-  max-width:1000px;
-  margin:0 auto;
   padding:60px 20px;
+  max-width:1000px; margin:0 auto;
+  scroll-margin-top:90px;
 }
 h2{
   font-family:'Orbitron', sans-serif;
+  text-transform:uppercase;
+  margin:0 0 20px;
   font-size:30px;
   color:var(--accent);
-  margin-bottom:20px;
+  letter-spacing:2px;
+}
+section p{
+  font-size:20px;
+  line-height:1.7;
+  margin:0 auto;
+  max-width:900px;
+}
+iframe{
+  width:100%;
+  height:380px;
+  border:none;
+  margin-top:18px;
+  border-radius:12px;
+}
+#music{ padding-top:40px; }
+footer{
+  padding:18px;
+  font-size:14px;
+  background:#111;
+  margin-top:30px;
 }
 
-/* === LINEUP === */
-#lineup{padding-top:40px;}
+/* ===== LINEUP ===== */
+#lineup{
+  padding-top:40px;
+}
 
 .lineup-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:26px;
-  margin-top:26px;
+  gap:24px;
+  margin-top:24px;
 }
 
-/* center bottom row */
-.lineup-grid .matias { grid-column: 1 / 3; justify-self:end; width:80%; }
-.lineup-grid .marlon { grid-column: 2 / 4; justify-self:start; width:80%; }
-
+/* Kortit */
 .member-card{
   background:#050505;
+  border-radius:18px;
+  padding:16px;
   border:1px solid #111;
-  border-radius:14px;
-  padding:14px;
+  box-shadow:0 12px 30px rgba(0,0,0,.65);
   text-align:center;
-  box-shadow:0 10px 25px rgba(0,0,0,.6);
 }
-.member-card img{width:100%;border-radius:10px;margin-bottom:10px;}
-.member-card figcaption{font-size:17px;letter-spacing:1px;}
+.member-card img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:14px;
+  margin-bottom:12px;
+}
+.member-card figcaption{
+  font-family:'Orbitron', sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  font-size:16px;
+}
 
-/* === MUSIC & OTHERS === */
-iframe{width:100%;height:380px;border:none;border-radius:12px;margin-top:18px;}
-
-footer{padding:18px;font-size:14px;background:#111;margin-top:30px;}
-
-/* === MOBILE === */
-@media (max-width:768px){
-
-  body{font-size:16px;}
-
-  /* MOBILE NAV */
-  .menu-btn{
-    display:flex;
-    border:0;
-    background:transparent;
-    color:#fff;
-    font-family:'Orbitron';
-    font-size:14px;
+/* Desktop: 3 ylhäällä, 2 alhaalla keskellä */
+@media (min-width: 900px){
+  .lineup-grid{
+    grid-template-columns:repeat(4, minmax(0, 1fr));
   }
+  .member-card:nth-child(1){ grid-column:1; grid-row:1; }
+  .member-card:nth-child(2){ grid-column:2; grid-row:1; }
+  .member-card:nth-child(3){ grid-column:3; grid-row:1; }
+  .member-card:nth-child(4){ grid-column:2; grid-row:2; }
+  .member-card:nth-child(5){ grid-column:3; grid-row:2; }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:768px){
+  /* pienempi fontti mobiiliin */
+  body{ font-size:14px; line-height:1.4; }
+
+  nav.navbar{ padding:10px 15px; }
+  nav.navbar img.logo{ height:45px; }
+
+  /* Mobile grid layout: logo | hamburger | socials */
+  nav.navbar{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+  }
+  .nav-right{ display:contents; }
+
+  /* Simppelempi hamburger, keskitetty */
+  .menu-btn{
+    justify-self:center;
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+    padding:8px !important;
+    gap:0 !important;
+  }
+  .menu-btn span{ display:none; } /* piilota teksti */
   .menu-btn::before,
   .menu-btn::after{
-    content:"";
-    width:24px;
+    width:22px;
     height:2px;
     background:#fff;
-    box-shadow:0 -6px 0 0 #fff, 0 6px 0 0 #fff;
+    box-shadow:0 -7px 0 0 currentColor, 0 7px 0 0 currentColor;
+    opacity:0.95;
   }
   .menu-btn[aria-expanded="true"]::before{
     box-shadow:none;
     transform:rotate(45deg);
   }
   .menu-btn[aria-expanded="true"]::after{
-    box-shadow:none;
     transform:rotate(-45deg) translateY(-2px);
+    width:22px;
   }
 
+  /* Social-ikonit vasemmalle päin */
+  .nav-socials{
+    justify-self:end;
+    transform:translateX(-18px);
+    padding-right:8px;
+    margin-left:0;
+  }
+  .nav-socials a{ margin-left:12px; }
+  .nav-socials img{ width:26px; height:26px; }
+
+  /* Dropdown menu */
   .nav-links{
-    display:none;
     position:absolute;
-    top:64px;
-    right:12px;
-    background:rgba(0,0,0,.95);
-    padding:12px;
-    border-radius:10px;
-    width:200px;
+    right:12px; top:64px;
+    width:min(86vw, 360px);
+    display:none;
     flex-direction:column;
-    text-align:left;
+    align-items:stretch;
+    gap:6px;
+    padding:12px;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:14px;
+    background:linear-gradient(180deg, rgba(10,10,10,.92), rgba(8,8,8,.92));
+    backdrop-filter:blur(8px);
+    box-shadow:0 14px 40px rgba(0,0,0,.55);
+    animation:menuIn .18s ease-out both;
   }
-  .nav-links.open{display:flex;}
-  .nav-links a{padding:8px 4px;}
+  .nav-links.open{ display:flex; }
+  .nav-links a{
+    width:100%;
+    text-align:left;
+    padding:10px 12px;
+    border-radius:10px;
+    font-family:'Orbitron', sans-serif;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    font-size:14px;
+    color:#fff;
+    opacity:.95;
+    transition:background .15s, color .15s, transform .06s;
+  }
+  .nav-links a:hover{ background:rgba(255,255,255,.06); color:var(--accent); }
 
-  /* LINEUP MOBILE ORDER */
+  /* Hero mobiilissa – sama kuva, mutta isompi */
+  .hero{ margin-top:55px; }
+  .hero img{
+    object-fit:contain;
+    object-position:center top;
+    max-height:54vh;
+  }
+
+  /* Kompaktimmat otsikot ja tekstit */
+  h2{ font-size:20px; margin-bottom:14px; }
+  section p{ font-size:16px; }
+  #biography{ padding-top:28px; }
+
+  section{ padding:40px 16px; scroll-margin-top:70px; }
+  #music{ padding-top:20px; padding-bottom:10px; }
+  iframe{ height:220px; }
+  #music iframe{ margin-bottom:0; display:block; }
+  #upcoming{ padding-top:20px; }
+
+  /* Lineup mobiilissa: yksi sarake, järjestys sama kuin HTML */
   .lineup-grid{
     grid-template-columns:1fr;
   }
+}
 
-  .teemu   { order:1; }
-  .juho    { order:2; }
-  .aku     { order:3; }
-  .matias  { order:4; }
-  .marlon  { order:5; }
-
-  .lineup-grid .matias,
-  .lineup-grid .marlon{
-    width:100%;
-    justify-self:center;
-    grid-column:auto;
-  }
-
-  iframe{height:220px;}
+/* ===== Animations ===== */
+@keyframes menuIn{
+  from{ opacity:0; transform:translateY(-6px); }
+  to{ opacity:1; transform:translateY(0); }
 }
