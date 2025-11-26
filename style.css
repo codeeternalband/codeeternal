@@ -127,6 +127,54 @@ footer{
   margin-top:30px;
 }
 
+/* ===== LINEUP ===== */
+#lineup{
+  padding-top:40px;
+}
+
+.lineup-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap:24px;
+  margin-top:24px;
+}
+
+.member-card{
+  background:#050505;
+  border-radius:18px;
+  padding:16px;
+  border:1px solid #111;
+  box-shadow:0 12px 30px rgba(0,0,0,.65);
+  text-align:left;
+}
+
+.member-card img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:14px;
+  margin-bottom:12px;
+}
+
+.member-card figcaption{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.member-name{
+  font-family:'Orbitron', sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  font-size:16px;
+}
+
+.member-role{
+  font-size:14px;
+  color:#ccc;
+  opacity:0.9;
+}
+
 /* ===== MOBILE ===== */
 @media (max-width:768px){
   /* pienempi fontti mobiiliin */
@@ -230,7 +278,20 @@ footer{
   #music{ padding-top:20px; padding-bottom:10px; }
   iframe{ height:220px; }
   #music iframe{ margin-bottom:0; display:block; }
-  #tour{ padding-top:20px; }
+  #upcoming{ padding-top:20px; }
+
+  .lineup-grid{
+    gap:18px;
+  }
+  .member-card{
+    padding:12px;
+  }
+  .member-name{
+    font-size:14px;
+  }
+  .member-role{
+    font-size:13px;
+  }
 }
 
 /* ===== Animations ===== */
