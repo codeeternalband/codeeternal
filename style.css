@@ -596,3 +596,38 @@ footer {
     margin-top: 40px;
   }
 }
+
+/* Upcoming Shows – rivit vasemmalle, kokonaisuus keskitetty */
+.simple-shows {
+  max-width: 750px;
+  margin: 0 auto 40px auto; /* keskitys + tilaa alas */
+  text-align: left;         /* RIVIT VASEMMALLE */
+}
+
+.simple-shows p {
+  margin: 8px 0;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* Booking-note siirretty alemmaksi */
+.booking-note {
+  margin-top: 60px; 
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Mobiilisäädöt */
+@media (max-width: 768px) {
+  .simple-shows {
+    max-width: 90%;
+  }
+
+  .simple-shows p {
+    font-size: 16px;
+  }
+
+  .booking-note {
+    margin-top: 50px;
+  }
+}
