@@ -535,3 +535,19 @@ footer {
     transform: translateY(0);
   }
 }
+
+/* Simple list style for Upcoming Shows */
+.simple-shows {
+  margin: 0 auto 20px auto;
+  max-width: 700px;
+  text-align: left;
+}
+
+.simple-shows p {
+  margin: 6px 0;
+  font-size: 20px;
+}
+
+.simple-shows strong {
+  color: var(--accent);
+}
