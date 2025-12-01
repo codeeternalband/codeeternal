@@ -9,17 +9,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=15" />
+  <link rel="stylesheet" href="style.css?v=16" />
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <img src="logo-white.png" alt="Code Eternal Logo" class="logo" />
+    <a href="#top" class="logo-link">
+      <img src="logo-white.png" alt="Code Eternal Logo" class="logo" width="200" height="60" />
+    </a>
+
     <div class="nav-right">
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav" aria-label="Avaa valikko">
         <span>Menu</span>
       </button>
+
       <div class="nav-links" id="primaryNav">
         <a href="#biography">Biography</a>
         <a href="#lineup">Lineup</a>
@@ -27,40 +31,50 @@
         <a href="#upcoming">Upcoming Shows</a>
         <a href="#contact">Contact</a>
       </div>
+
       <div class="nav-socials">
         <a href="https://www.instagram.com/code_eternal/" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="icon-instagram.svg" alt="Instagram" />
+          <img src="icon-instagram.svg" alt="Instagram" width="38" height="38" loading="lazy" decoding="async" />
         </a>
         <a href="https://www.youtube.com/channel/UC-vPF50rdRidDn1fiP3GvuA" target="_blank" rel="noopener" aria-label="YouTube">
-          <img src="icon-youtube.svg" alt="YouTube" />
+          <img src="icon-youtube.svg" alt="YouTube" width="38" height="38" loading="lazy" decoding="async" />
         </a>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <div class="hero">
-    <img src="banner.jpg" alt="Code Eternal band" class="hero-img" />
+  <div class="hero" id="top">
+    <img
+      src="banner.jpg"
+      alt="Code Eternal band"
+      class="hero-img"
+      width="1600"
+      height="700"
+      decoding="async"
+    />
   </div>
 
   <!-- BIOGRAPHY -->
   <section id="biography">
     <h2>Biography</h2>
+
     <p>
-      Progressive metal group <strong>Code Eternal</strong> made waves with the release of their single 
+      Progressive metal group <strong>Code Eternal</strong> made waves with the release of their single
       <em>“Brace Yourself”</em> on October 10, 2025. It marks the first single from their long-awaited debut album.
     </p>
 
     <p>
-      Fronted by guitarist <strong>Juho Ranta-Maunus</strong> — who at just 14 years old won Guitar World Magazine’s 
-      <em>“Young Guitarist of the Year”</em> in 2020. Founded in 2021, Code Eternal quickly turned heads with their 2022 debut EP <em>Sixth Wave</em>. 
+      Fronted by guitarist <strong>Juho Ranta-Maunus</strong> — who at just 14 years old won Guitar World Magazine’s
+      <em>“Young Guitarist of the Year”</em> in 2020. Founded in 2021, Code Eternal quickly turned heads with their 2022 debut EP <em>Sixth Wave</em>.
       Now, three years later they return stronger, sharper and more ambitious than ever.
     </p>
 
     <p>
-      <em>“Brace Yourself”</em> dives into thought-provoking territory, drawing inspiration from the concept of artificial intelligence evolving into a 
-      self-defending entity that could challenge humanity’s existence. Code Eternal's music is a dynamic blend of progressive metal, heavy riffs, 
+      <em>“Brace Yourself”</em> dives into thought-provoking territory, drawing inspiration from the concept of artificial intelligence evolving into a
+      self-defending entity that could challenge humanity’s existence. Code Eternal's music is a dynamic blend of progressive metal, heavy riffs,
       and funk-infused grooves, elevated by pulsating synth layers that add depth and urgency to the band’s sound.
+    </p>
   </section>
 
   <!-- LINEUP -->
@@ -68,29 +82,68 @@
     <h2>Lineup</h2>
 
     <div class="lineup-grid">
-      <!-- Järjestys HTML: Teemu, Juho, Aku, Matias, Marlon -->
+      <!-- Teemu -->
       <figure class="member-card">
-        <img src="lineup-teemu.jpg" alt="Teemu Dahlman" loading="lazy">
+        <img
+          src="lineup-teemu.jpg"
+          alt="Teemu Dahlman"
+          loading="lazy"
+          decoding="async"
+          width="600"
+          height="700"
+        />
         <figcaption>Teemu Dahlman</figcaption>
       </figure>
 
+      <!-- Juho -->
       <figure class="member-card">
-        <img src="lineup-juho.jpg" alt="Juho Ranta-Maunus" loading="lazy">
+        <img
+          src="lineup-juho.jpg"
+          alt="Juho Ranta-Maunus"
+          loading="lazy"
+          decoding="async"
+          width="600"
+          height="700"
+        />
         <figcaption>Juho Ranta-Maunus</figcaption>
       </figure>
 
+      <!-- Aku -->
       <figure class="member-card">
-        <img src="lineup-aku.jpg" alt="Aku Vuorela" loading="lazy">
+        <img
+          src="lineup-aku.jpg"
+          alt="Aku Vuorela"
+          loading="lazy"
+          decoding="async"
+          width="600"
+          height="700"
+        />
         <figcaption>Aku Vuorela</figcaption>
       </figure>
 
+      <!-- Matias -->
       <figure class="member-card">
-        <img src="lineup-matias.jpg" alt="Matias Källi" loading="lazy">
+        <img
+          src="lineup-matias.jpg"
+          alt="Matias Källi"
+          loading="lazy"
+          decoding="async"
+          width="600"
+          height="700"
+        />
         <figcaption>Matias Källi</figcaption>
       </figure>
 
+      <!-- Marlon -->
       <figure class="member-card">
-        <img src="lineup-marlon.jpg" alt="Marlon Mäkelä" loading="lazy">
+        <img
+          src="lineup-marlon.jpg"
+          alt="Marlon Mäkelä"
+          loading="lazy"
+          decoding="async"
+          width="600"
+          height="700"
+        />
         <figcaption>Marlon Mäkelä</figcaption>
       </figure>
     </div>
@@ -111,13 +164,33 @@
   <section id="upcoming">
     <h2>Upcoming Shows</h2>
 
-    <p>
-      <strong>18.2.</strong> — Hugo-sali, Seinäjoki, Finland<br>
-      <strong>14.3.</strong> — Bar 15, Seinäjoki, Finland
-      <strong>25.4.</strong> — Teatteri Hiomo, Lapua, Finland
-    </p>
+    <div class="shows">
+      <article class="show">
+        <div class="show-date">18.2.</div>
+        <div class="show-details">
+          <div class="show-venue">Hugo-sali</div>
+          <div class="show-location">Seinäjoki, Finland</div>
+        </div>
+      </article>
 
-    <p style="margin-top:24px;">
+      <article class="show">
+        <div class="show-date">14.3.</div>
+        <div class="show-details">
+          <div class="show-venue">Bar 15</div>
+          <div class="show-location">Seinäjoki, Finland</div>
+        </div>
+      </article>
+
+      <article class="show">
+        <div class="show-date">25.4.</div>
+        <div class="show-details">
+          <div class="show-venue">Teatteri Hiomo</div>
+          <div class="show-location">Lapua, Finland</div>
+        </div>
+      </article>
+    </div>
+
+    <p class="booking-note">
       If you'd like to book Code Eternal for your event,<br>
       please reach out through the contact section below!
     </p>
@@ -128,7 +201,7 @@
     <h2>Contact</h2>
     <p>
       Booking &amp; media inquiries:
-      <a href="mailto:codeeternalband@gmail.com" style="color:var(--accent)">codeeternalband@gmail.com</a>
+      <a href="mailto:codeeternalband@gmail.com" class="contact-link">codeeternalband@gmail.com</a>
     </p>
   </section>
 
@@ -141,21 +214,23 @@
     const btn = document.getElementById('menuBtn');
     const nav = document.getElementById('primaryNav');
 
-    btn?.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(open));
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
+    if (btn && nav) {
+      btn.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
 
-    nav?.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => {
-        if (nav.classList.contains('open')) {
-          nav.classList.remove('open');
-          btn.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        }
-      })
-    );
+      nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          }
+        });
+      });
+    }
   </script>
 </body>
 </html>
