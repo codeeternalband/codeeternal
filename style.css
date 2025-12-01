@@ -536,107 +536,16 @@ footer {
   }
 }
 
-/* Simple list style for Upcoming Shows */
-.simple-shows {
-  margin: 0 auto 20px auto;
-  max-width: 700px;
-  text-align: left;
+/* SHOWS (uusi) */
+#shows {
+  padding-top: 40px;
 }
 
-.simple-shows p {
-  margin: 6px 0;
-  font-size: 20px;
-}
-
-.simple-shows strong {
-  color: var(--accent);
-}
-
-/* Simple list style for Upcoming Shows */
-.simple-shows {
-  margin: 0 auto 40px auto; /* lisää tilaa ennen booking-notea */
-  max-width: 750px;
-  text-align: left;
-}
-
-.simple-shows p {
-  margin: 10px 0;
-  font-size: 20px;
-  display: flex;
-  align-items: baseline;
-}
-
-/* Päivämäärien tasaus */
-.simple-shows .date {
-  display: inline-block;
-  width: 70px;       /* SÄÄTÖ: tämä määrittää linjauksen */
-  text-align: right; /* päivämäärät tasataan oikeaan laitaan */
-  margin-right: 14px;
-  font-weight: bold;
-  color: var(--accent);
-}
-
-/* Booking-note alemmas */
-.booking-note {
-  margin-top: 50px; /* aiempi 16–20px oli liian pieni → siirretty selvästi alemmas */
-  font-size: 18px;
-  opacity: 0.9;
-}
-
-@media (max-width: 768px) {
-  .simple-shows p {
-    font-size: 16px;
-  }
-
-  .simple-shows .date {
-    width: 55px; /* pienempi leveys mobiiliin */
-  }
-
-  .booking-note {
-    margin-top: 40px;
-  }
-}
-
-/* Upcoming Shows – rivit vasemmalle, kokonaisuus keskitetty */
-.simple-shows {
-  max-width: 750px;
-  margin: 0 auto 40px auto; /* keskitys + tilaa alas */
-  text-align: left;         /* RIVIT VASEMMALLE */
-}
-
-.simple-shows p {
-  margin: 8px 0;
-  font-size: 20px;
-  line-height: 1.6;
-}
-
-/* Booking-note siirretty alemmaksi */
-.booking-note {
-  margin-top: 60px; 
-  font-size: 18px;
-  opacity: 0.9;
-}
-
-/* Mobiilisäädöt */
-@media (max-width: 768px) {
-  .simple-shows {
-    max-width: 90%;
-  }
-
-  .simple-shows p {
-    font-size: 16px;
-  }
-
-  .booking-note {
-    margin-top: 50px;
-  }
-}
-
-/* Keskitetty mutta vasemmalle tasattu keikkalistaus */
+/* Keskitetty lohko, vasemmalle tasattu sisältö */
 .shows-centered {
-  max-width: 700px;  /* rajoittaa leveyden */
-  margin: 0 auto;    /* keskittää koko paketin */
-  text-align: left;  /* mutta sisältö vasemmalle */
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  text-align: left;
 }
 
 .shows-centered p {
@@ -645,9 +554,20 @@ footer {
   line-height: 1.6;
 }
 
+/* Past Shows otsikko */
+.past-title {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  font-size: 24px;
+  color: var(--accent);
+  margin-top: 40px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
 /* Book us lower */
 .booking-note {
-  margin-top: 50px;
+  margin-top: 60px;
   font-size: 18px;
   opacity: 0.9;
 }
@@ -657,10 +577,18 @@ footer {
   .shows-centered {
     max-width: 90%;
   }
+
   .shows-centered p {
     font-size: 16px;
   }
+
+  .past-title {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+
   .booking-note {
-    margin-top: 40px;
+    margin-top: 50px;
   }
 }
+
