@@ -551,3 +551,48 @@ footer {
 .simple-shows strong {
   color: var(--accent);
 }
+
+/* Simple list style for Upcoming Shows */
+.simple-shows {
+  margin: 0 auto 40px auto; /* lisää tilaa ennen booking-notea */
+  max-width: 750px;
+  text-align: left;
+}
+
+.simple-shows p {
+  margin: 10px 0;
+  font-size: 20px;
+  display: flex;
+  align-items: baseline;
+}
+
+/* Päivämäärien tasaus */
+.simple-shows .date {
+  display: inline-block;
+  width: 70px;       /* SÄÄTÖ: tämä määrittää linjauksen */
+  text-align: right; /* päivämäärät tasataan oikeaan laitaan */
+  margin-right: 14px;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* Booking-note alemmas */
+.booking-note {
+  margin-top: 50px; /* aiempi 16–20px oli liian pieni → siirretty selvästi alemmas */
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .simple-shows p {
+    font-size: 16px;
+  }
+
+  .simple-shows .date {
+    width: 55px; /* pienempi leveys mobiiliin */
+  }
+
+  .booking-note {
+    margin-top: 40px;
+  }
+}
