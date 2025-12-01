@@ -631,3 +631,36 @@ footer {
     margin-top: 50px;
   }
 }
+
+/* Keskitetty mutta vasemmalle tasattu keikkalistaus */
+.shows-centered {
+  max-width: 700px;  /* rajoittaa leveyden */
+  margin: 0 auto;    /* keskittää koko paketin */
+  text-align: left;  /* mutta sisältö vasemmalle */
+}
+
+.shows-centered p {
+  margin: 8px 0;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* Book us lower */
+.booking-note {
+  margin-top: 50px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .shows-centered {
+    max-width: 90%;
+  }
+  .shows-centered p {
+    font-size: 16px;
+  }
+  .booking-note {
+    margin-top: 40px;
+  }
+}
