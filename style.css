@@ -277,81 +277,11 @@ footer {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .member-card:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .member-card:nth-child(2) {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .member-card:nth-child(3) {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
-  .member-card:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .member-card:nth-child(5) {
-    grid-column: 3;
-    grid-row: 2;
-  }
-}
-
-/* ===== UPCOMING SHOWS (TOUR) ===== */
-#upcoming {
-  padding-top: 40px;
-}
-
-.shows {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 720px;
-  margin: 0 auto 24px auto;
-}
-
-.show {
-  display: flex;
-  align-items: baseline;
-  padding: 12px 16px;
-  border-radius: 14px;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
-  text-align: left;
-}
-
-.show-date {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 18px;
-  color: var(--accent);
-  margin-right: 18px;
-  white-space: nowrap;
-}
-
-.show-details {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.show-venue {
-  font-weight: 600;
-}
-
-.show-location {
-  font-size: 16px;
-  opacity: 0.85;
-}
-
-.booking-note {
-  margin-top: 16px;
+  .member-card:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .member-card:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .member-card:nth-child(3) { grid-column: 3; grid-row: 1; }
+  .member-card:nth-child(4) { grid-column: 2; grid-row: 2; }
+  .member-card:nth-child(5) { grid-column: 3; grid-row: 2; }
 }
 
 /* ===== MOBILE ===== */
@@ -501,26 +431,8 @@ footer {
     height: 220px;
   }
 
-  #upcoming {
-    padding-top: 20px;
-  }
-
   .lineup-grid {
     grid-template-columns: 1fr;
-  }
-
-  .show {
-    flex-direction: row;
-    padding: 10px 12px;
-  }
-
-  .show-date {
-    font-size: 16px;
-    margin-right: 12px;
-  }
-
-  .show-location {
-    font-size: 14px;
   }
 }
 
@@ -536,25 +448,52 @@ footer {
   }
 }
 
-/* SHOWS (uusi) */
+/* ===== SHOWS (korjattu) ===== */
 #shows {
   padding-top: 40px;
 }
 
-/* Keskitetty lohko, vasemmalle tasattu sisältö */
+/* Keskelle sivua, mutta sisältö vasemmalle */
 .shows-centered {
-  max-width: 700px;
+  width: fit-content;
+  max-width: min(92vw, 720px);
   margin: 0 auto 40px auto;
   text-align: left;
 }
 
-.shows-centered p {
-  margin: 8px 0;
-  font-size: 20px;
-  line-height: 1.6;
+/* Jokainen keikka omalla rivillä */
+.show-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
 }
 
-/* Past Shows otsikko */
+/* Päivämäärille kiinteä sarake = kaikki alkaa samasta linjasta */
+.show-date {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: var(--accent);
+  width: 4.5ch;          /* säädä tarvittaessa */
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Keikan teksti */
+.show-info {
+  font-size: 20px;
+  line-height: 1.6;
+  white-space: nowrap;   /* jos haluat rivittyvän, poista tämä */
+}
+
+/* Book us */
+.booking-note {
+  margin-top: 60px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Past Shows otsikko (jos käytät myöhemmin) */
 .past-title {
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
@@ -565,30 +504,29 @@ footer {
   letter-spacing: 2px;
 }
 
-/* Book us lower */
-.booking-note {
-  margin-top: 60px;
-  font-size: 18px;
-  opacity: 0.9;
-}
-
-/* Mobile */
+/* Mobile: anna rivittyä jos teksti ei mahdu */
 @media (max-width: 768px) {
   .shows-centered {
+    width: auto;
     max-width: 90%;
   }
 
-  .shows-centered p {
+  .show-date {
     font-size: 16px;
+    width: 4.5ch;
+  }
+
+  .show-info {
+    font-size: 16px;
+    white-space: normal; /* mobiilissa saa rivittyä */
+  }
+
+  .booking-note {
+    margin-top: 50px;
   }
 
   .past-title {
     font-size: 18px;
     margin-top: 30px;
   }
-
-  .booking-note {
-    margin-top: 50px;
-  }
 }
-
