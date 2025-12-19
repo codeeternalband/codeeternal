@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+foote<!DOCTYPE html>
 <html lang="fi">
 <head>
   <meta charset="UTF-8" />
@@ -183,12 +183,16 @@
     </p>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Code Eternal. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>&copy; <span id="year"></span> Code Eternal. All rights reserved.</p>
+</footer>
 
   <!-- MENU SCRIPT -->
   <script>
+    // Automaattinen vuosiluku
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobiilivalikko
     const btn = document.getElementById('menuBtn');
     const nav = document.getElementById('primaryNav');
 
