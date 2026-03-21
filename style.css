@@ -58,7 +58,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 30px;
+  padding: 12px 24px;
   z-index: 1000;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
@@ -66,11 +66,12 @@ img {
 .logo-link {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .logo {
-  height: 60px;
-  width: auto;
+  width: 150px;
+  height: auto;
 }
 
 .nav-right {
@@ -109,8 +110,8 @@ img {
 }
 
 .nav-socials img {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   transition: transform 0.2s;
 }
 
@@ -204,8 +205,21 @@ section {
   scroll-margin-top: 90px;
 }
 
+.feature-section {
+  max-width: 1100px;
+}
+
 #biography {
   padding-top: 40px;
+}
+
+.section-kicker {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.68);
+  margin-bottom: 14px;
 }
 
 h2 {
@@ -229,7 +243,137 @@ a {
 }
 
 .contact-link {
-  color: var(--accent);
+  color: var(--text);
+}
+
+.feature-card,
+.contact-panel,
+.press-card,
+.lyrics-card {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
+    linear-gradient(135deg, rgba(0, 173, 239, 0.08), rgba(0, 0, 0, 0.12));
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.press-card {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+}
+
+.press-quote {
+  max-width: 760px;
+}
+
+.press-quote-link {
+  display: inline-block;
+  margin-left: 6px;
+  color: #6f8394;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1;
+  vertical-align: text-top;
+  transition: color 0.2s;
+}
+
+.press-quote-link:hover {
+  color: #94a8b8;
+}
+
+.press-meta {
+  display: grid;
+  justify-items: center;
+  margin-top: 14px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.press-source-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text);
+}
+
+.press-date {
+  margin: 4px 0 0;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.feature-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.release-embed {
+  margin-top: 24px;
+}
+
+.release-embed iframe {
+  display: block;
+  width: 100%;
+  max-width: 920px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin-top: 0;
+}
+
+.feature-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 173, 239, 0.4);
+  background: rgba(0, 173, 239, 0.14);
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  transition: transform 0.15s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.feature-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 173, 239, 0.8);
+  background: rgba(0, 173, 239, 0.24);
+  box-shadow: 0 0 22px rgba(0, 173, 239, 0.2);
+}
+
+.feature-link-secondary {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.feature-link-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 iframe {
@@ -242,6 +386,58 @@ iframe {
 
 #music {
   padding-top: 40px;
+}
+
+.music-embed {
+  height: 500px;
+}
+
+.lyrics-panel {
+  overflow: hidden;
+}
+
+.lyrics-summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  cursor: pointer;
+}
+
+.lyrics-summary::-webkit-details-marker {
+  display: none;
+}
+
+.lyrics-title {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-size: 24px;
+  color: var(--text);
+}
+
+.lyrics-toggle {
+  color: var(--accent);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.lyrics-panel[open] .lyrics-toggle {
+  transform: rotate(45deg);
+}
+
+.lyrics-body {
+  display: grid;
+  gap: 18px;
+  padding-top: 22px;
+}
+
+.lyrics-body p {
+  max-width: 760px;
+  white-space: normal;
 }
 
 footer {
@@ -257,10 +453,11 @@ footer {
 }
 
 .lineup-grid {
-  display: grid;
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
   margin-top: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .member-card {
@@ -270,9 +467,9 @@ footer {
   border: 1px solid var(--border);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
   text-align: center;
-  max-width: 220px;
-  width: 100%;
-  margin: 0 auto;
+  flex: 0 1 calc(50% - 9px);
+  max-width: calc(50% - 9px);
+  margin: 0;
 }
 
 .member-card img {
@@ -288,42 +485,65 @@ footer {
   font-size: 16px;
 }
 
-@media (min-width: 1100px) {
+.nowrap {
+  white-space: nowrap;
+}
+
+@media (min-width: 760px) {
+  .member-card {
+    flex-basis: calc(33.333% - 12px);
+    max-width: calc(33.333% - 12px);
+  }
+}
+
+@media (min-width: 1180px) {
   #lineup {
     max-width: 1240px;
   }
 
-  .lineup-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+  .member-card {
+    flex-basis: calc(20% - 14.4px);
+    max-width: calc(20% - 14.4px);
   }
 }
 
 /* ===== MOBILE ===== */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   body {
     font-size: 14px;
     line-height: 1.4;
   }
 
   .navbar {
-    padding: 10px 15px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    position: fixed;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
+  .logo-link {
+    min-width: 132px;
+    justify-content: flex-start;
+  }
+
   .logo {
-    height: 45px;
+    width: 150px;
+    height: auto;
   }
 
   .nav-right {
-    display: contents;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
   }
 
   /* Mobile menu button */
   .menu-btn {
     display: inline-flex;
-    justify-self: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     background: transparent !important;
     border: 0 !important;
     box-shadow: none !important;
@@ -355,14 +575,12 @@ footer {
   }
 
   .nav-socials {
-    justify-self: end;
-    transform: translateX(-10px);
     margin-left: 0;
   }
 
   .nav-socials img {
-    width: 26px;
-    height: 26px;
+    width: 34px;
+    height: 34px;
   }
 
   /* Dropdown menu */
@@ -423,6 +641,11 @@ footer {
     margin-bottom: 14px;
   }
 
+  .section-kicker {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
   section p {
     font-size: 16px;
   }
@@ -445,13 +668,28 @@ footer {
     height: 220px;
   }
 
-  .lineup-grid {
-    grid-template-columns: 1fr;
+  .music-embed {
+    height: 360px;
   }
 
-  .member-card {
-    max-width: 320px;
+  .feature-card,
+  .contact-panel,
+  .press-card {
+    padding: 20px 18px;
+    border-radius: 18px;
   }
+
+  .press-grid {
+    gap: 16px;
+  }
+
+  .feature-link {
+    width: 100%;
+    min-width: 0;
+    font-size: 13px;
+    padding: 13px 18px;
+  }
+
 }
 
 /* ===== Animations ===== */
@@ -466,85 +704,97 @@ footer {
   }
 }
 
-/* ===== SHOWS (korjattu) ===== */
+/* ===== SHOWS ===== */
 #shows {
   padding-top: 40px;
 }
 
-/* Keskelle sivua, mutta sisältö vasemmalle */
-.shows-centered {
-  width: fit-content;
-  max-width: min(92vw, 720px);
-  margin: 0 auto 40px auto;
-  text-align: left;
+.shows-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin: 28px auto 0;
+  max-width: 920px;
 }
 
-/* Jokainen keikka omalla rivillä */
-.show-row {
+.show-card {
+  padding: 24px 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01)),
+    rgba(6, 6, 6, 0.94);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.show-line {
   display: flex;
-  align-items: baseline;
-  gap: 12px;
-  padding: 10px 0;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 0;
 }
 
-/* Päivämäärille kiinteä sarake = kaikki alkaa samasta linjasta */
 .show-date {
   font-family: 'Orbitron', sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   color: var(--accent);
-  width: 4.5ch;          /* säädä tarvittaessa */
-  text-align: right;
-  white-space: nowrap;
+  margin: 0;
 }
 
-/* Keikan teksti */
-.show-info {
-  font-size: 20px;
-  line-height: 1.6;
-  white-space: nowrap;   /* jos haluat rivittyvän, poista tämä */
+.show-venue {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 0;
 }
 
-/* Book us */
+.show-city {
+  font-size: 18px;
+  line-height: 1.5;
+  opacity: 0.88;
+  margin: 0;
+}
+
 .booking-note {
-  margin-top: 60px;
+  margin-top: 32px;
   font-size: 18px;
   opacity: 0.9;
 }
 
-/* Past Shows otsikko (jos käytät myöhemmin) */
-.past-title {
-  font-family: 'Orbitron', sans-serif;
-  text-transform: uppercase;
-  font-size: 24px;
-  color: var(--accent);
-  margin-top: 40px;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+.contact-email-row {
+  margin-top: 16px;
 }
 
-/* Mobile: anna rivittyä jos teksti ei mahdu */
-@media (max-width: 768px) {
-  .shows-centered {
-    width: auto;
-    max-width: 90%;
+.contact-panel .contact-link {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.contact-note {
+  margin-top: 18px;
+  opacity: 0.84;
+}
+
+@media (max-width: 1100px) {
+  .show-line {
+    gap: 10px;
   }
 
   .show-date {
-    font-size: 16px;
-    width: 4.5ch;
+    font-size: 20px;
   }
 
-  .show-info {
+  .show-venue,
+  .show-city,
+  .contact-panel .contact-link {
     font-size: 16px;
-    white-space: normal; /* mobiilissa saa rivittyä */
   }
 
   .booking-note {
-    margin-top: 50px;
-  }
-
-  .past-title {
-    font-size: 18px;
-    margin-top: 30px;
+    margin-top: 24px;
   }
 }
