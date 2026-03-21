@@ -377,9 +377,9 @@ a {
 .lyrics-card {
   max-width: 920px;
   margin: 0 auto;
-  padding: 28px;
+  padding: 16px;
   border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 15px;
+  border-radius: 14px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
     linear-gradient(135deg, rgba(0, 173, 239, 0.08), rgba(0, 0, 0, 0.12));
@@ -474,6 +474,7 @@ a {
 .video-card {
   max-width: none;
   width: 100%;
+  padding: 16px;
 }
 
 .video-card iframe {
@@ -527,25 +528,33 @@ iframe {
   height: 380px;
   border: none;
   margin-top: 18px;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 #music {
   padding-top: 40px;
 }
 
-.music-embed {
-  height: 500px;
+.music-frame {
   max-width: 920px;
   margin: 18px auto 0;
-  padding: 28px;
+  padding: 16px;
   border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 15px;
+  border-radius: 14px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
     linear-gradient(135deg, rgba(0, 173, 239, 0.08), rgba(0, 0, 0, 0.12));
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
   box-sizing: border-box;
+}
+
+.music-embed {
+  display: block;
+  width: 100%;
+  height: 480px;
+  margin-top: 0;
+  border: none;
+  border-radius: 14px;
 }
 
 .lyrics-panel {
@@ -647,7 +656,7 @@ footer {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
     linear-gradient(135deg, rgba(0, 173, 239, 0.08), rgba(0, 0, 0, 0.12));
-  border-radius: 15px;
+  border-radius: 14px;
   padding: 16px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
@@ -860,11 +869,6 @@ footer {
     padding-top: 28px;
   }
 
-  #music::before {
-    inset: 6px 0;
-    border-radius: 15px;
-  }
-
   #music {
     padding-top: 20px;
     padding-bottom: 10px;
@@ -875,14 +879,23 @@ footer {
   }
 
   .music-embed {
-    height: 360px;
+    height: 480px;
+  }
+
+  .music-frame {
+    padding: 20px 18px;
   }
 
   .feature-card,
   .contact-panel,
   .press-card {
-    padding: 20px 18px;
-    border-radius: 15px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .video-card,
+  .music-frame {
+    padding: 16px;
   }
 
   .hero-lyric {
@@ -941,8 +954,8 @@ footer {
 }
 
 .show-card {
-  padding: 24px 22px;
-  border-radius: 20px;
+  padding: 16px;
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.09);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
