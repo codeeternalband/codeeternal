@@ -226,14 +226,9 @@ img {
 .hero-media {
   position: relative;
   width: 100%;
-  overflow: hidden;
-}
-
-.hero-img {
-  width: 100%;
   height: clamp(460px, 58vh, 820px);
-  object-fit: cover;
-  object-position: center 14%;
+  background: #000 url("assets/images/Kuva-Bändi.jpg") center 14% / cover no-repeat;
+  overflow: hidden;
 }
 
 .hero-credit {
@@ -835,9 +830,9 @@ footer {
     padding-top: 55px;
   }
 
-  .hero-img {
+  .hero-media {
     height: 34vh;
-    object-position: center top;
+    background-position: center top;
   }
 
   h2 {
