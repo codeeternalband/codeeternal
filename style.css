@@ -139,12 +139,12 @@ img {
 }
 
 .nav-socials a {
-  margin-left: 18px;
+  margin-left: 10px;
 }
 
 .nav-socials img {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   transition: transform 0.2s;
 }
 
@@ -605,7 +605,7 @@ footer {
 .member-card img {
   border-radius: 14px;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 6;
   object-fit: cover;
   object-position: center top;
 }
@@ -616,7 +616,7 @@ footer {
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1.4px;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .member-name {
@@ -683,7 +683,7 @@ footer {
   .menu-btn {
     display: inline-flex;
     position: absolute;
-    left: 50%;
+    left: 56%;
     transform: translateX(-50%);
     background: transparent !important;
     border: 0 !important;
@@ -720,8 +720,8 @@ footer {
   }
 
   .nav-socials img {
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 28px;
   }
 
   /* Dropdown menu */
