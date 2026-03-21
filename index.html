@@ -1,5 +1,5 @@
-foote<!DOCTYPE html>
-<html lang="fi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,7 +35,7 @@ foote<!DOCTYPE html>
   />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=17" />
+  <link rel="stylesheet" href="style.css?v=28" />
 </head>
 
 <body>
@@ -43,7 +43,7 @@ foote<!DOCTYPE html>
   <!-- NAVBAR -->
   <nav class="navbar">
     <a href="#top" class="logo-link">
-      <img src="logo-white.png" alt="Code Eternal Logo" class="logo" width="200" height="60" />
+      <img src="assets/images/logo-white.png" alt="Code Eternal Logo" class="logo" width="200" height="60" />
     </a>
 
     <div class="nav-right">
@@ -54,17 +54,22 @@ foote<!DOCTYPE html>
       <div class="nav-links" id="primaryNav">
         <a href="#biography">Biography</a>
         <a href="#lineup">Lineup</a>
+        <a href="#latest-release">Release</a>
         <a href="#music">Music</a>
+        <a href="#lyrics">Lyrics</a>
         <a href="#shows">Shows</a>
         <a href="#contact">Contact</a>
       </div>
 
       <div class="nav-socials">
+        <a href="https://www.facebook.com/Codeeternal/" target="_blank" rel="noopener" aria-label="Facebook">
+          <img src="assets/icons/icon-facebook.svg" alt="Facebook" width="38" height="38" loading="lazy" decoding="async" />
+        </a>
         <a href="https://www.instagram.com/code_eternal/" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="icon-instagram.svg" alt="Instagram" width="38" height="38" loading="lazy" decoding="async" />
+          <img src="assets/icons/icon-instagram.svg" alt="Instagram" width="38" height="38" loading="lazy" decoding="async" />
         </a>
         <a href="https://www.youtube.com/channel/UC-vPF50rdRidDn1fiP3GvuA" target="_blank" rel="noopener" aria-label="YouTube">
-          <img src="icon-youtube.svg" alt="YouTube" width="38" height="38" loading="lazy" decoding="async" />
+          <img src="assets/icons/icon-youtube.svg" alt="YouTube" width="38" height="38" loading="lazy" decoding="async" />
         </a>
       </div>
     </div>
@@ -72,14 +77,18 @@ foote<!DOCTYPE html>
 
   <!-- HERO -->
   <div class="hero" id="top">
-    <img
-      src="banner.jpg"
-      alt="Code Eternal band"
-      class="hero-img"
-      width="1600"
-      height="700"
-      decoding="async"
-    />
+    <h1 class="sr-only">Code Eternal</h1>
+    <div class="hero-media">
+      <img
+        src="assets/images/Kuva-Bändi.jpg"
+        alt="Code Eternal band"
+        class="hero-img"
+        width="1600"
+        height="700"
+        decoding="async"
+      />
+      <span class="hero-credit">Photo: Toni Huhta</span>
+    </div>
   </div>
 
   <!-- BIOGRAPHY -->
@@ -87,20 +96,15 @@ foote<!DOCTYPE html>
     <h2>Biography</h2>
 
     <p>
-      Progressive metal group <strong>Code Eternal</strong> made waves with the release of their single
-      <em>“Brace Yourself”</em> on October 10, 2025. It marks the first single from their long-awaited debut album.
+      Progressive metal group Code Eternal made waves with the release of their single <em>“Brace Yourself”</em> on October 10, 2025. It marks the first single from their long-awaited debut album.
     </p>
 
     <p>
-      Fronted by guitarist <strong>Juho Ranta-Maunus</strong> — who at just 14 years old won Guitar World Magazine’s
-      <em>“Young Guitarist of the Year”</em> in 2020. Founded in 2021, Code Eternal quickly turned heads with their 2022 debut EP <em>Sixth Wave</em>.
-      Now, three years later they return stronger, sharper and more ambitious than ever.
+      Fronted by guitarist Juho "JRM" Ranta-Maunus who at just 14 years old won Guitar World Magazine’s <em>“Young Guitarist of the Year”</em> in 2020. Founded in 2021, Code Eternal quickly turned heads with their 2022 debut EP <em>Sixth Wave</em>. Now, three years later they return stronger, sharper and more ambitious than ever.
     </p>
 
     <p>
-      <em>“Brace Yourself”</em> dives into thought-provoking territory, drawing inspiration from the concept of artificial intelligence evolving into a
-      self-defending entity that could challenge humanity’s existence. Code Eternal's music is a dynamic blend of progressive metal, heavy riffs,
-      and funk-infused grooves, elevated by pulsating synth layers that add depth and urgency to the band’s sound.
+      <em>“Brace Yourself”</em> dives into thought-provoking territory, drawing inspiration from the concept of artificial intelligence evolving into a self-defending entity that could challenge humanity’s existence. Code Eternal's music is a dynamic blend of progressive metal, heavy riffs, and funk-infused grooves, elevated by pulsating synth layers that add depth and urgency to the band’s sound.
     </p>
   </section>
 
@@ -110,71 +114,337 @@ foote<!DOCTYPE html>
 
     <div class="lineup-grid">
       <figure class="member-card">
-        <img src="lineup-teemu.jpg" alt="Teemu Dahlman" loading="lazy" decoding="async" width="600" height="700" />
-        <figcaption>Teemu Dahlman</figcaption>
+        <div class="member-photo-wrap">
+          <img src="assets/images/Kuva-Teemu.jpg" alt="Teemu Dahlman" loading="lazy" decoding="async" width="600" height="700" />
+          <span class="member-credit">Photo: Toni Huhta</span>
+        </div>
+        <figcaption>
+          <span class="member-name">Teemu Dahlman</span>
+        </figcaption>
       </figure>
 
       <figure class="member-card">
-        <img src="lineup-juho.jpg" alt="Juho Ranta-Maunus" loading="lazy" decoding="async" width="600" height="700" />
-        <figcaption>Juho Ranta-Maunus</figcaption>
+        <div class="member-photo-wrap">
+          <img src="assets/images/Kuva-Juho.jpg" alt='Juho "JRM" Ranta-Maunus' loading="lazy" decoding="async" width="600" height="700" />
+          <span class="member-credit">Photo: Toni Huhta</span>
+        </div>
+        <figcaption>
+          <span class="member-name">Juho <span class="nowrap">Ranta-Maunus</span></span>
+        </figcaption>
       </figure>
 
       <figure class="member-card">
-        <img src="lineup-aku.jpg" alt="Aku Vuorela" loading="lazy" decoding="async" width="600" height="700" />
-        <figcaption>Aku Vuorela</figcaption>
+        <div class="member-photo-wrap">
+          <img src="assets/images/Kuva-Matias.jpg" alt="Matias Källi" loading="lazy" decoding="async" width="600" height="700" />
+          <span class="member-credit">Photo: Toni Huhta</span>
+        </div>
+        <figcaption>
+          <span class="member-name">Matias Källi</span>
+        </figcaption>
       </figure>
 
       <figure class="member-card">
-        <img src="lineup-matias.jpg" alt="Matias Källi" loading="lazy" decoding="async" width="600" height="700" />
-        <figcaption>Matias Källi</figcaption>
+        <div class="member-photo-wrap">
+          <img src="assets/images/Kuva-Marlon.jpg" alt="Marlon Mäkelä" loading="lazy" decoding="async" width="600" height="700" />
+          <span class="member-credit">Photo: Toni Huhta</span>
+        </div>
+        <figcaption>
+          <span class="member-name">Marlon Mäkelä</span>
+        </figcaption>
       </figure>
+    </div>
+  </section>
 
-      <figure class="member-card">
-        <img src="lineup-marlon.jpg" alt="Marlon Mäkelä" loading="lazy" decoding="async" width="600" height="700" />
-        <figcaption>Marlon Mäkelä</figcaption>
-      </figure>
+  <!-- LATEST RELEASE -->
+  <section id="latest-release" class="feature-section">
+    <h2>Music Videos</h2>
+    <div class="release-embed">
+      <article class="feature-card video-card">
+        <iframe
+          src="https://www.youtube.com/embed/zaQy98UgrTU"
+          title="Code Eternal - Brace Yourself"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </article>
+
+      <article class="feature-card video-card">
+        <iframe
+          src="https://www.youtube.com/embed/s5jS_5bygdA"
+          title="Code Eternal - Music Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </article>
     </div>
   </section>
 
   <!-- MUSIC -->
   <section id="music">
     <h2>Music</h2>
-    <p>Listen to our latest single <em>Brace Yourself</em> and more on Spotify:</p>
     <iframe
       src="https://open.spotify.com/embed/artist/5vuhEK6GfC6Zz0VJntD7qE"
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      class="music-embed"
       title="Spotify Player">
     </iframe>
   </section>
 
-  <!-- SHOWS -->
-  <section id="shows">
-    <h2>Shows</h2>
+  <section id="lyrics" class="feature-section">
+    <h2>Lyrics</h2>
+    <details class="lyrics-card lyrics-panel">
+      <summary class="lyrics-summary">
+        <span class="lyrics-summary-copy">
+          <span class="lyrics-title">Voices Call</span>
+        </span>
+        <span class="lyrics-toggle" aria-hidden="true">⌄</span>
+      </summary>
 
-    <div class="shows-centered">
-      <div class="show-row">
-        <span class="show-date">18.2.</span>
-        <span class="show-info">— Hugo-sali, Seinäjoki, Finland</span>
+      <div class="lyrics-body">
+        <p>
+          Voices call<br>
+          Yet no one's there<br>
+          Whispers in silence<br>
+          I can't escape<br>
+          This prison sell<br>
+          Trapped in alliance
+        </p>
+
+        <p>
+          They take me down and take control<br>
+          Through voices deep within my soul<br>
+          Is it me or them talking in my head<br>
+          Lacking sense of reality
+        </p>
+
+        <p>
+          I hear them calling out my name<br>
+          I wanna run away but I'm standing still<br>
+          Every corner of my mind is drowning in pain<br>
+          Sleep turns my mind off until it reigns again
+        </p>
+
+        <p>
+          Web of lies surrounding me<br>
+          Lack of perception<br>
+          Conspiracies, they haunt my mind<br>
+          I fade into shadows
+        </p>
+
+        <p>
+          They take me down and take control<br>
+          Through voices deep within my soul<br>
+          Is it me or them talking in my head<br>
+          Lacking sense of reality
+        </p>
+
+        <p>
+          They take me down and take control<br>
+          Web of lies surrounding me
+        </p>
+
+        <p>
+          I hear them calling out my name<br>
+          I wanna run away but I'm standing still<br>
+          Every corner of my mind is drowning in pain<br>
+          Sleep turns my mind off until it reigns again
+        </p>
+
+        <p class="lyrics-credit">Written by Teemu Dahlman and Juho Ranta-Maunus</p>
+      </div>
+    </details>
+
+    <details class="lyrics-card lyrics-panel">
+      <summary class="lyrics-summary">
+        <span class="lyrics-summary-copy">
+          <span class="lyrics-title">Brace Yourself</span>
+        </span>
+        <span class="lyrics-toggle" aria-hidden="true">⌄</span>
+      </summary>
+
+      <div class="lyrics-body">
+        <p>
+          You walk on a shattered ice<br>
+          Every step you take is another roll of dice<br>
+          Bad decisions and self-exclusions<br>
+          Where is the natural wisdom
+        </p>
+
+        <p>
+          We are on a sinking boat<br>
+          At the sea that's made of ones and zeros<br>
+          Is there even a way out anymore, anymore
+        </p>
+
+        <p>
+          Humanity, brace yourself<br>
+          There is a storm that’s drawing near<br>
+          For the AI extends too far
+        </p>
+
+        <p>
+          I lay my hands on the ground and<br>
+          Feel the rocks and grit compounded<br>
+          We still believe that the earth is rounded<br>
+          The web is full of lies and lies and...
+        </p>
+
+        <p>
+          We are on a sinking boat<br>
+          At the sea that's made of ones and zeros<br>
+          Is there even a way out anymore, anymore
+        </p>
+
+        <p>
+          Humanity, brace yourself<br>
+          There is a strom that’s drawing near<br>
+          For the AI extends too far
+        </p>
+
+        <p>
+          Humanity, brace yourself<br>
+          There is a strom that’s drawing near<br>
+          For the AI extends too far
+        </p>
+
+        <p>
+          Your days are counted<br>
+          Time is running out of your hands<br>
+          There is a storm that’s drawing near<br>
+          For the AI extends too far<br>
+          For the AI extends too far
+        </p>
+
+        <p class="lyrics-credit">Written by Teemu Dahlman and Juho Ranta-Maunus</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="press" class="feature-section">
+    <h2>Press Coverage</h2>
+    <div class="press-grid">
+      <div class="press-card">
+        <p class="press-quote">
+          “Der Aufstieg der künstlichen Intelligenz als sich selbst verteidigende Einheit”
+          <a
+            href="https://vampster.com/news/code-eternal-neue-progressive-metal-single-brace-yourself-mitsamt-video-clip/"
+            target="_blank"
+            rel="noopener"
+            class="press-quote-link"
+            aria-label="Open Vampster article in a new tab">
+            ↗
+          </a>
+        </p>
+        <div class="press-meta">
+          <div class="press-source-row">
+            <span>Vampster</span>
+          </div>
+          <p class="press-date">November 7, 2025</p>
+        </div>
       </div>
 
-      <div class="show-row">
-        <span class="show-date">14.3.</span>
-        <span class="show-info">— Bar 15, Seinäjoki, Finland</span>
-    </div>
+      <div class="press-card">
+        <p class="press-quote">
+          “Brace Yourself” esittelee Code Eternalin uudenlaista intensiteettiä ja lupaa bändille vahvaa jalansijaa kansainvälisellä metallikentällä.
+          <a
+            href="https://metalliluola.fi/progressiivinen-metallilupaus-code-eternal-julkaisi-ensimmaisen-singlen-brace-yourself-tulevalta-albumilta/"
+            target="_blank"
+            rel="noopener"
+            class="press-quote-link"
+            aria-label="Open Metalliluola article in a new tab">
+            ↗
+          </a>
+        </p>
+        <div class="press-meta">
+          <div class="press-source-row">
+            <span>Metalliluola</span>
+          </div>
+          <p class="press-date">October 19, 2025</p>
+        </div>
+      </div>
 
-    <p class="booking-note">
-      If you'd like to book Code Eternal for your event,<br>
-      please reach out through the contact section below!
-    </p>
+      <div class="press-card">
+        <p class="press-quote">
+          “Brace Yourself” esittelee yhtyeen uudenlaista intensiteettiä...
+          <a
+            href="https://kaaoszine.fi/progressiivinen-metallilupaus-code-eternal-julkaisi-ensimmaisen-singlen-brace-yourself-tulevalta-albumilta/"
+            target="_blank"
+            rel="noopener"
+            class="press-quote-link"
+            aria-label="Open Kaaoszine article in a new tab">
+            ↗
+          </a>
+        </p>
+        <div class="press-meta">
+          <div class="press-source-row">
+            <span>Kaaoszine</span>
+          </div>
+          <p class="press-date">October 13, 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWS -->
+  <section id="shows" class="feature-section">
+    <h2>Shows</h2>
+
+    <div class="shows-grid">
+      <article class="show-card">
+        <div class="show-meta">
+          <div class="show-venue-row">
+            <span class="show-venue">Lentilärock</span>
+          </div>
+          <p class="show-date">August 2, 2025</p>
+          <p class="show-city">Kuortane, Finland</p>
+        </div>
+      </article>
+
+      <article class="show-card">
+        <div class="show-meta">
+          <div class="show-venue-row">
+            <span class="show-venue">Rytmikorjaamo</span>
+          </div>
+          <p class="show-date">October 30, 2021</p>
+          <p class="show-city">Seinäjoki, Finland</p>
+        </div>
+      </article>
+
+      <article class="show-card">
+        <div class="show-meta">
+          <div class="show-venue-row">
+            <span class="show-venue">Hugo Hall</span>
+          </div>
+          <p class="show-date">February 18, 2026</p>
+          <p class="show-city">Seinäjoki, Finland</p>
+        </div>
+      </article>
+
+      <article class="show-card">
+        <div class="show-meta">
+          <div class="show-venue-row">
+            <span class="show-venue">Bar 15 Basement</span>
+          </div>
+          <p class="show-date">March 14, 2026</p>
+          <p class="show-city">Seinäjoki, Finland</p>
+        </div>
+      </article>
+    </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>
-      Booking &amp; media inquiries:
-      <a href="mailto:codeeternalband@gmail.com" class="contact-link">codeeternalband@gmail.com</a>
-    </p>
+    <div class="contact-panel">
+      <p>
+        For live bookings, interviews, media inquiries, and other band-related requests, contact:
+      </p>
+      <p class="contact-email-row">
+        <span class="contact-link" id="ce-mail"></span>
+      </p>
+    </div>
   </section>
 
 <footer>
@@ -185,6 +455,16 @@ foote<!DOCTYPE html>
   <script>
     // Automaattinen vuosiluku
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Sähköpostiosoite muodostetaan selaimessa ilman selväkielistä osoitetta HTML:ssä tai JS-stringinä
+    const ceMail = document.getElementById('ce-mail');
+    if (ceMail) {
+      const makeText = (codes) => codes.map((code) => String.fromCharCode(code)).join('');
+      const user = makeText([99, 111, 100, 101, 101, 116, 101, 114, 110, 97, 108, 98, 97, 110, 100]);
+      const domain = makeText([103, 109, 97, 105, 108, 46, 99, 111, 109]);
+
+      ceMail.textContent = `${user}@${domain}`;
+    }
 
     // Mobiilivalikko
     const btn = document.getElementById('menuBtn');
