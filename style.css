@@ -28,6 +28,31 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+    url("assets/images/Kuva-Tausta2.jpg") center / cover no-repeat;
+  filter: blur(1.5px);
+  transform: scale(1.01);
+  z-index: -2;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.025), transparent 24%),
+    radial-gradient(circle at 80% 18%, rgba(255, 255, 255, 0.02), transparent 20%),
+    linear-gradient(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.14));
+  z-index: -1;
+  pointer-events: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -90,8 +115,8 @@ img {
   color: var(--text);
   text-decoration: none;
   margin-left: 18px;
-  font-size: 18px;
-  letter-spacing: 2px;
+  font-size: 15px;
+  letter-spacing: 1.6px;
   transition: color 0.2s;
 }
 
@@ -103,6 +128,14 @@ img {
   margin-left: 40px;
   display: flex;
   align-items: center;
+}
+
+.nav-socials-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
 }
 
 .nav-socials a {
@@ -190,11 +223,44 @@ img {
   overflow: hidden;
 }
 
+.hero-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36)),
+    url("assets/images/Kuva-Bändi.jpg") center 32% / cover no-repeat;
+  filter: blur(12px);
+  transform: scale(1.06);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero-img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-height: clamp(460px, 58vh, 820px);
   object-fit: contain;
-  object-position: center top;
+  object-position: center center;
+}
+
+.hero-credit {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 /* ===== SECTIONS ===== */
@@ -211,6 +277,29 @@ section {
 
 #biography {
   padding-top: 40px;
+  max-width: 1200px;
+}
+
+#music {
+  position: relative;
+}
+
+#music::before {
+  content: "";
+  position: absolute;
+  inset: 12px 0;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.008)),
+    rgba(5, 5, 5, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.26);
+  z-index: -1;
+}
+
+#biography p {
+  max-width: none;
+  text-wrap: pretty;
 }
 
 .section-kicker {
@@ -469,6 +558,14 @@ iframe {
   white-space: normal;
 }
 
+.lyrics-credit {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+}
+
 footer {
   padding: 18px;
   font-size: 14px;
@@ -500,9 +597,13 @@ footer {
   margin: 0;
 }
 
+.member-photo-wrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+
 .member-card img {
   border-radius: 14px;
-  margin-bottom: 12px;
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
@@ -510,10 +611,27 @@ footer {
 }
 
 .member-card figcaption {
+  display: grid;
+  gap: 6px;
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1.4px;
   font-size: 16px;
+}
+
+.member-name {
+  display: block;
+}
+
+.member-credit {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .nowrap {
@@ -680,6 +798,11 @@ footer {
 
   #biography {
     padding-top: 28px;
+  }
+
+  #music::before {
+    inset: 6px 0;
+    border-radius: 18px;
   }
 
   #music {

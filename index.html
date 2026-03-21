@@ -62,6 +62,10 @@
       </div>
 
       <div class="nav-socials">
+        <span class="nav-socials-label">Follow Us</span>
+        <a href="https://www.facebook.com/Codeeternal/" target="_blank" rel="noopener" aria-label="Facebook">
+          <img src="assets/icons/icon-facebook.svg" alt="Facebook" width="38" height="38" loading="lazy" decoding="async" />
+        </a>
         <a href="https://www.instagram.com/code_eternal/" target="_blank" rel="noopener" aria-label="Instagram">
           <img src="assets/icons/icon-instagram.svg" alt="Instagram" width="38" height="38" loading="lazy" decoding="async" />
         </a>
@@ -75,14 +79,17 @@
   <!-- HERO -->
   <div class="hero" id="top">
     <h1 class="sr-only">Code Eternal</h1>
-    <img
-      src="assets/images/Kuva-Bändi.jpg"
-      alt="Code Eternal band"
-      class="hero-img"
-      width="1600"
-      height="700"
-      decoding="async"
-    />
+    <div class="hero-media">
+      <img
+        src="assets/images/Kuva-Bändi.jpg"
+        alt="Code Eternal band"
+        class="hero-img"
+        width="1600"
+        height="700"
+        decoding="async"
+      />
+      <span class="hero-credit">Photo: Toni Huhta</span>
+    </div>
   </div>
 
   <!-- BIOGRAPHY -->
@@ -108,23 +115,43 @@
 
     <div class="lineup-grid">
       <figure class="member-card">
-        <img src="assets/images/Kuva-Teemu.jpg" alt="Teemu Dahlman" loading="lazy" decoding="async" width="600" height="700" />
-        <figcaption>Teemu Dahlman</figcaption>
+        <div class="member-photo-wrap">
+          <img src="assets/images/Kuva-Teemu.jpg" alt="Teemu Dahlman" loading="lazy" decoding="async" width="600" height="700" />
+          <span class="member-credit">Photo: Toni Huhta</span>
+        </div>
+        <figcaption>
+          <span class="member-name">Teemu Dahlman</span>
+        </figcaption>
       </figure>
 
       <figure class="member-card">
-        <img src="assets/images/Kuva-Juho.jpg" alt='Juho "JRM" Ranta-Maunus' loading="lazy" decoding="async" width="600" height="700" />
-        <figcaption>Juho "JRM" <span class="nowrap">Ranta-Maunus</span></figcaption>
+        <div class="member-photo-wrap">
+          <img src="assets/images/Kuva-Juho.jpg" alt='Juho "JRM" Ranta-Maunus' loading="lazy" decoding="async" width="600" height="700" />
+          <span class="member-credit">Photo: Toni Huhta</span>
+        </div>
+        <figcaption>
+          <span class="member-name">Juho <span class="nowrap">Ranta-Maunus</span></span>
+        </figcaption>
       </figure>
 
       <figure class="member-card">
-        <img src="assets/images/Kuva-Matias.jpg" alt="Matias Källi" loading="lazy" decoding="async" width="600" height="700" />
-        <figcaption>Matias Källi</figcaption>
+        <div class="member-photo-wrap">
+          <img src="assets/images/Kuva-Matias.jpg" alt="Matias Källi" loading="lazy" decoding="async" width="600" height="700" />
+          <span class="member-credit">Photo: Toni Huhta</span>
+        </div>
+        <figcaption>
+          <span class="member-name">Matias Källi</span>
+        </figcaption>
       </figure>
 
       <figure class="member-card">
-        <img src="assets/images/Kuva-Marlon.jpg" alt="Marlon Mäkelä" loading="lazy" decoding="async" width="600" height="700" />
-        <figcaption>Marlon Mäkelä</figcaption>
+        <div class="member-photo-wrap">
+          <img src="assets/images/Kuva-Marlon.jpg" alt="Marlon Mäkelä" loading="lazy" decoding="async" width="600" height="700" />
+          <span class="member-credit">Photo: Toni Huhta</span>
+        </div>
+        <figcaption>
+          <span class="member-name">Marlon Mäkelä</span>
+        </figcaption>
       </figure>
     </div>
   </section>
@@ -172,7 +199,6 @@
       <summary class="lyrics-summary">
         <span class="lyrics-summary-copy">
           <span class="lyrics-title">Voices Call</span>
-          <span class="lyrics-meta">Written by Code Eternal</span>
         </span>
         <span class="lyrics-toggle" aria-hidden="true">⌄</span>
       </summary>
@@ -226,6 +252,8 @@
           Every corner of my mind is drowning in pain<br>
           Sleep turns my mind off until it reigns again
         </p>
+
+        <p class="lyrics-credit">Written by Teemu Dahlman and Juho Ranta-Maunus</p>
       </div>
     </details>
 
@@ -233,13 +261,64 @@
       <summary class="lyrics-summary">
         <span class="lyrics-summary-copy">
           <span class="lyrics-title">Brace Yourself</span>
-          <span class="lyrics-meta">Written by Code Eternal</span>
         </span>
         <span class="lyrics-toggle" aria-hidden="true">⌄</span>
       </summary>
 
       <div class="lyrics-body">
-        <p>Lyrics coming soon.</p>
+        <p>
+          You walk on a shattered ice<br>
+          Every step you take is another roll of dice<br>
+          Bad decisions and self-exclusions<br>
+          Where is the natural wisdom
+        </p>
+
+        <p>
+          We are on a sinking boat<br>
+          At the sea that's made of ones and zeros<br>
+          Is there even a way out anymore, anymore
+        </p>
+
+        <p>
+          Humanity, brace yourself<br>
+          There is a storm that’s drawing near<br>
+          For the AI extends too far
+        </p>
+
+        <p>
+          I lay my hands on the ground and<br>
+          Feel the rocks and grit compounded<br>
+          We still believe that the earth is rounded<br>
+          The web is full of lies and lies and...
+        </p>
+
+        <p>
+          We are on a sinking boat<br>
+          At the sea that's made of ones and zeros<br>
+          Is there even a way out anymore, anymore
+        </p>
+
+        <p>
+          Humanity, brace yourself<br>
+          There is a strom that’s drawing near<br>
+          For the AI extends too far
+        </p>
+
+        <p>
+          Humanity, brace yourself<br>
+          There is a strom that’s drawing near<br>
+          For the AI extends too far
+        </p>
+
+        <p>
+          Your days are counted<br>
+          Time is running out of your hands<br>
+          There is a storm that’s drawing near<br>
+          For the AI extends too far<br>
+          For the AI extends too far
+        </p>
+
+        <p class="lyrics-credit">Written by Teemu Dahlman and Juho Ranta-Maunus</p>
       </div>
     </details>
   </section>
@@ -317,6 +396,26 @@
       <article class="show-card">
         <div class="show-meta">
           <div class="show-venue-row">
+            <span class="show-venue">Lentilärock</span>
+          </div>
+          <p class="show-date">August 2, 2025</p>
+          <p class="show-city">Kuortane, Finland</p>
+        </div>
+      </article>
+
+      <article class="show-card">
+        <div class="show-meta">
+          <div class="show-venue-row">
+            <span class="show-venue">Rytmikorjaamo</span>
+          </div>
+          <p class="show-date">October 30, 2021</p>
+          <p class="show-city">Seinäjoki, Finland</p>
+        </div>
+      </article>
+
+      <article class="show-card">
+        <div class="show-meta">
+          <div class="show-venue-row">
             <span class="show-venue">Hugo Hall</span>
           </div>
           <p class="show-date">February 18, 2026</p>
@@ -327,7 +426,7 @@
       <article class="show-card">
         <div class="show-meta">
           <div class="show-venue-row">
-            <span class="show-venue">Bar 15</span>
+            <span class="show-venue">Bar 15 Basement</span>
           </div>
           <p class="show-date">March 14, 2026</p>
           <p class="show-city">Seinäjoki, Finland</p>
