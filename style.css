@@ -1,6 +1,6 @@
 /* === CODE ETERNAL STYLES === */
 :root {
-  --accent: #00adef;
+  --accent: #00B7F0;
   --bg: #000;
   --bg-alt: #050505;
   --border: #111;
@@ -255,8 +255,8 @@ img {
   font-family: 'Rajdhani', sans-serif;
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(14px, 1.5vw, 22px);
-  line-height: 1.18;
+  font-size: clamp(16px, 1.8vw, 26px);
+  line-height: 1;
   letter-spacing: 0.2px;
   text-transform: none;
   color: rgba(255, 255, 255, 0.92);
@@ -266,7 +266,7 @@ img {
 
 .hero-lyric-stage {
   position: relative;
-  min-height: calc(2em * 1.18 + 4px);
+  min-height: calc(2em + 3px);
   margin-bottom: 8px;
 }
 
@@ -274,11 +274,16 @@ img {
   position: absolute;
   inset: 0;
   display: grid;
+  grid-template-rows: repeat(2, 1em);
   align-content: start;
-  gap: 4px;
+  gap: 3px;
   opacity: 0;
-  transition: opacity 0.45s ease-in-out;
+  transition: opacity 0.18s linear;
   will-change: opacity;
+}
+
+.hero-lyric-line {
+  min-height: 1em;
 }
 
 .hero-lyric-lines.is-active {
@@ -286,10 +291,17 @@ img {
 }
 
 .hero-lyric-line:empty {
-  display: none;
+  visibility: hidden;
 }
 
 .hero-lyric-song {
+  display: inline-flex;
+  align-items: flex-start;
+  align-self: flex-start;
+  flex-direction: column;
+  justify-self: start;
+  width: fit-content;
+  max-width: 100%;
   min-height: 1.2em;
   font-size: 0.62em;
   font-style: normal;
@@ -297,6 +309,10 @@ img {
   letter-spacing: 1.2px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.58);
+}
+
+.hero-lyric-song-label {
+  padding-inline: 0.35em;
 }
 
 /* ===== SECTIONS ===== */
@@ -613,6 +629,7 @@ iframe {
 }
 
 .lyrics-credit {
+  margin-top: 10px;
   font-family: 'Orbitron', sans-serif;
   font-size: 11px;
   letter-spacing: 1.2px;
@@ -703,6 +720,12 @@ footer {
   .lineup-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
+  .press-grid {
+    max-width: 1240px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
 }
 
 /* ===== MOBILE ===== */
@@ -858,8 +881,12 @@ footer {
     padding-top: 28px;
   }
 
+  #lyrics {
+    padding-top: 56px;
+  }
+
   #music {
-    padding-top: 20px;
+    padding-top: 56px;
     padding-bottom: 10px;
   }
 
@@ -967,7 +994,7 @@ footer {
 
 .show-venue {
   font-family: 'Orbitron', sans-serif;
-  font-size: 23px;
+  font-size: 20px;
   letter-spacing: 1.2px;
   margin: 0;
 }
@@ -975,14 +1002,14 @@ footer {
 .show-date {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.62);
 }
 
 .show-city {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   opacity: 0.88;
   margin: 0;
@@ -1010,19 +1037,26 @@ footer {
   opacity: 0.84;
 }
 
+@media (min-width: 1180px) {
+  .shows-grid {
+    max-width: 1240px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1100px) {
   .show-venue {
-    font-size: 21px;
+    font-size: 19px;
   }
 
   .show-date {
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 1.4px;
   }
 
   .show-city,
   .contact-panel .contact-link {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .booking-note {

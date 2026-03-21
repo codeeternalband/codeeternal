@@ -245,7 +245,7 @@
           Sleep turns my mind off until it reigns again
         </p>
 
-        <p class="lyrics-credit">Written by Teemu Dahlman and Juho Ranta-Maunus</p>
+        <p class="lyrics-credit">Lyrics by Teemu Dahlman and Juho Ranta-Maunus</p>
       </div>
     </details>
 
@@ -310,7 +310,7 @@
           For the AI extends too far
         </p>
 
-        <p class="lyrics-credit">Written by Teemu Dahlman and Juho Ranta-Maunus</p>
+        <p class="lyrics-credit">Lyrics by Teemu Dahlman and Juho Ranta-Maunus</p>
       </div>
     </details>
   </section>
@@ -515,12 +515,12 @@
       });
 
       let heroLyricIndex = Math.floor(Math.random() * heroLyricPairs.length);
-      const heroLyricDisplayMs = 4800;
+      const heroLyricDisplayMs = 5000;
 
-      heroLyric.innerHTML = '<div class="hero-lyric-stage"></div><small class="hero-lyric-song"></small>';
+      heroLyric.innerHTML = '<div class="hero-lyric-stage"></div><small class="hero-lyric-song"><span class="hero-lyric-song-label"></span></small>';
 
       const heroLyricStage = heroLyric.querySelector('.hero-lyric-stage');
-      const heroLyricSong = heroLyric.querySelector('.hero-lyric-song');
+      const heroLyricSong = heroLyric.querySelector('.hero-lyric-song-label');
 
       const heroLyricLayers = heroLyricStage
         ? heroLyricPairs.map(({ lineOne, lineTwo }) => {
@@ -531,8 +531,8 @@
             layer.className = 'hero-lyric-lines';
             firstLine.className = 'hero-lyric-line';
             secondLine.className = 'hero-lyric-line';
-            firstLine.textContent = lineOne;
-            secondLine.textContent = lineTwo || '';
+            firstLine.textContent = lineTwo ? lineOne : '';
+            secondLine.textContent = lineTwo || lineOne;
 
             layer.append(firstLine, secondLine);
             heroLyricStage.append(layer);
