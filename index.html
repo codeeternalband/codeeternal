@@ -559,22 +559,54 @@
         }
       };
 
+      const showHeroLyric = (index) => {
+        heroLyricLayers.forEach((layer, layerIndex) => {
+          layer.classList.toggle('is-active', layerIndex === index);
+        });
+
+        setHeroSongTitle(index);
+        heroLyricIndex = index;
+      };
+
       if (heroLyricLayers[heroLyricIndex]) {
-        heroLyricLayers[heroLyricIndex].classList.add('is-active');
-        setHeroSongTitle(heroLyricIndex);
+        showHeroLyric(heroLyricIndex);
       }
 
       if (heroLyricPairs.length > 1 && heroLyricLayers.length === heroLyricPairs.length) {
-        window.setInterval(() => {
-          const currentHeroLyricIndex = heroLyricIndex;
-          const nextHeroLyricIndex = (heroLyricIndex + 1) % heroLyricPairs.length;
+        let heroLyricTimeoutId = 0;
 
-          heroLyricLayers[currentHeroLyricIndex]?.classList.remove('is-active');
-          heroLyricLayers[nextHeroLyricIndex]?.classList.add('is-active');
-          setHeroSongTitle(nextHeroLyricIndex);
+        const clearHeroLyricTimer = () => {
+          if (heroLyricTimeoutId) {
+            window.clearTimeout(heroLyricTimeoutId);
+            heroLyricTimeoutId = 0;
+          }
+        };
 
-          heroLyricIndex = nextHeroLyricIndex;
-        }, heroLyricDisplayMs);
+        const scheduleHeroLyricAdvance = () => {
+          clearHeroLyricTimer();
+
+          if (document.hidden) {
+            return;
+          }
+
+          heroLyricTimeoutId = window.setTimeout(() => {
+            const nextHeroLyricIndex = (heroLyricIndex + 1) % heroLyricPairs.length;
+            showHeroLyric(nextHeroLyricIndex);
+            scheduleHeroLyricAdvance();
+          }, heroLyricDisplayMs);
+        };
+
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            clearHeroLyricTimer();
+            return;
+          }
+
+          showHeroLyric(heroLyricIndex);
+          scheduleHeroLyricAdvance();
+        });
+
+        scheduleHeroLyricAdvance();
       }
     }
 
