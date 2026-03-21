@@ -523,48 +523,57 @@
       });
 
       let heroLyricIndex = Math.floor(Math.random() * heroLyricPairs.length);
-      const heroLyricDisplayMs = 6000;
-      const heroLyricFadeMs = 1500;
-      let currentHeroSongTitle = '';
+      const heroLyricDisplayMs = 4800;
 
-      const renderHeroLyric = () => {
-        const { songTitle, lineOne, lineTwo } = heroLyricPairs[heroLyricIndex];
-        const linesMarkup = lineTwo
-          ? `<span>${lineOne}</span><span>${lineTwo}</span>`
-          : `<span>${lineOne}</span>`;
+      heroLyric.innerHTML = '<div class="hero-lyric-stage"></div><small class="hero-lyric-song"></small>';
 
-        if (!heroLyric.querySelector('.hero-lyric-lines')) {
-          heroLyric.innerHTML = `<div class="hero-lyric-lines">${linesMarkup}</div><small class="hero-lyric-song">${songTitle}</small>`;
-          currentHeroSongTitle = songTitle;
+      const heroLyricStage = heroLyric.querySelector('.hero-lyric-stage');
+      const heroLyricSong = heroLyric.querySelector('.hero-lyric-song');
+
+      const heroLyricLayers = heroLyricStage
+        ? heroLyricPairs.map(({ lineOne, lineTwo }) => {
+            const layer = document.createElement('div');
+            const firstLine = document.createElement('span');
+            const secondLine = document.createElement('span');
+
+            layer.className = 'hero-lyric-lines';
+            firstLine.className = 'hero-lyric-line';
+            secondLine.className = 'hero-lyric-line';
+            firstLine.textContent = lineOne;
+            secondLine.textContent = lineTwo || '';
+
+            layer.append(firstLine, secondLine);
+            heroLyricStage.append(layer);
+            return layer;
+          })
+        : [];
+
+      const setHeroSongTitle = (index) => {
+        if (!heroLyricSong) {
           return;
         }
 
-        heroLyric.querySelector('.hero-lyric-lines').innerHTML = linesMarkup;
-
-        if (songTitle !== currentHeroSongTitle) {
-          heroLyric.querySelector('.hero-lyric-song').textContent = songTitle;
-          currentHeroSongTitle = songTitle;
+        const nextSongTitle = heroLyricPairs[index]?.songTitle || '';
+        if (heroLyricSong.textContent !== nextSongTitle) {
+          heroLyricSong.textContent = nextSongTitle;
         }
       };
 
-      if (heroLyricPairs.length > 0) {
-        renderHeroLyric();
+      if (heroLyricLayers[heroLyricIndex]) {
+        heroLyricLayers[heroLyricIndex].classList.add('is-active');
+        setHeroSongTitle(heroLyricIndex);
       }
 
-      if (heroLyricPairs.length > 1) {
+      if (heroLyricPairs.length > 1 && heroLyricLayers.length === heroLyricPairs.length) {
         window.setInterval(() => {
-          const heroLyricLines = heroLyric.querySelector('.hero-lyric-lines');
-          if (!heroLyricLines) {
-            return;
-          }
+          const currentHeroLyricIndex = heroLyricIndex;
+          const nextHeroLyricIndex = (heroLyricIndex + 1) % heroLyricPairs.length;
 
-          heroLyricLines.classList.add('is-fading');
+          heroLyricLayers[currentHeroLyricIndex]?.classList.remove('is-active');
+          heroLyricLayers[nextHeroLyricIndex]?.classList.add('is-active');
+          setHeroSongTitle(nextHeroLyricIndex);
 
-          window.setTimeout(() => {
-            heroLyricIndex = (heroLyricIndex + 1) % heroLyricPairs.length;
-            renderHeroLyric();
-            heroLyric.querySelector('.hero-lyric-lines')?.classList.remove('is-fading');
-          }, heroLyricFadeMs);
+          heroLyricIndex = nextHeroLyricIndex;
         }, heroLyricDisplayMs);
       }
     }
