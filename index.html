@@ -83,14 +83,6 @@
   <div class="hero" id="top">
     <h1 class="sr-only">Code Eternal</h1>
     <div class="hero-media">
-      <img
-        src="assets/images/Kuva-Bändi.jpg"
-        alt="Code Eternal band"
-        class="hero-img"
-        width="1600"
-        height="700"
-        decoding="async"
-      />
       <div class="hero-lyric" aria-hidden="true"></div>
       <span class="hero-credit">Photo: Toni Huhta</span>
     </div>
@@ -253,7 +245,7 @@
           Sleep turns my mind off until it reigns again
         </p>
 
-        <p class="lyrics-credit">Written by Teemu Dahlman and Juho Ranta-Maunus</p>
+        <p class="lyrics-credit">Lyrics by Teemu Dahlman and Juho Ranta-Maunus</p>
       </div>
     </details>
 
@@ -318,7 +310,7 @@
           For the AI extends too far
         </p>
 
-        <p class="lyrics-credit">Written by Teemu Dahlman and Juho Ranta-Maunus</p>
+        <p class="lyrics-credit">Lyrics by Teemu Dahlman and Juho Ranta-Maunus</p>
       </div>
     </details>
   </section>
@@ -523,12 +515,12 @@
       });
 
       let heroLyricIndex = Math.floor(Math.random() * heroLyricPairs.length);
-      const heroLyricDisplayMs = 4800;
+      const heroLyricDisplayMs = 5000;
 
-      heroLyric.innerHTML = '<div class="hero-lyric-stage"></div><small class="hero-lyric-song"></small>';
+      heroLyric.innerHTML = '<div class="hero-lyric-stage"></div><small class="hero-lyric-song"><span class="hero-lyric-song-label"></span></small>';
 
       const heroLyricStage = heroLyric.querySelector('.hero-lyric-stage');
-      const heroLyricSong = heroLyric.querySelector('.hero-lyric-song');
+      const heroLyricSong = heroLyric.querySelector('.hero-lyric-song-label');
 
       const heroLyricLayers = heroLyricStage
         ? heroLyricPairs.map(({ lineOne, lineTwo }) => {
@@ -539,8 +531,8 @@
             layer.className = 'hero-lyric-lines';
             firstLine.className = 'hero-lyric-line';
             secondLine.className = 'hero-lyric-line';
-            firstLine.textContent = lineOne;
-            secondLine.textContent = lineTwo || '';
+            firstLine.textContent = lineTwo ? lineOne : '';
+            secondLine.textContent = lineTwo || lineOne;
 
             layer.append(firstLine, secondLine);
             heroLyricStage.append(layer);
@@ -559,22 +551,54 @@
         }
       };
 
+      const showHeroLyric = (index) => {
+        heroLyricLayers.forEach((layer, layerIndex) => {
+          layer.classList.toggle('is-active', layerIndex === index);
+        });
+
+        setHeroSongTitle(index);
+        heroLyricIndex = index;
+      };
+
       if (heroLyricLayers[heroLyricIndex]) {
-        heroLyricLayers[heroLyricIndex].classList.add('is-active');
-        setHeroSongTitle(heroLyricIndex);
+        showHeroLyric(heroLyricIndex);
       }
 
       if (heroLyricPairs.length > 1 && heroLyricLayers.length === heroLyricPairs.length) {
-        window.setInterval(() => {
-          const currentHeroLyricIndex = heroLyricIndex;
-          const nextHeroLyricIndex = (heroLyricIndex + 1) % heroLyricPairs.length;
+        let heroLyricTimeoutId = 0;
 
-          heroLyricLayers[currentHeroLyricIndex]?.classList.remove('is-active');
-          heroLyricLayers[nextHeroLyricIndex]?.classList.add('is-active');
-          setHeroSongTitle(nextHeroLyricIndex);
+        const clearHeroLyricTimer = () => {
+          if (heroLyricTimeoutId) {
+            window.clearTimeout(heroLyricTimeoutId);
+            heroLyricTimeoutId = 0;
+          }
+        };
 
-          heroLyricIndex = nextHeroLyricIndex;
-        }, heroLyricDisplayMs);
+        const scheduleHeroLyricAdvance = () => {
+          clearHeroLyricTimer();
+
+          if (document.hidden) {
+            return;
+          }
+
+          heroLyricTimeoutId = window.setTimeout(() => {
+            const nextHeroLyricIndex = (heroLyricIndex + 1) % heroLyricPairs.length;
+            showHeroLyric(nextHeroLyricIndex);
+            scheduleHeroLyricAdvance();
+          }, heroLyricDisplayMs);
+        };
+
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            clearHeroLyricTimer();
+            return;
+          }
+
+          showHeroLyric(heroLyricIndex);
+          scheduleHeroLyricAdvance();
+        });
+
+        scheduleHeroLyricAdvance();
       }
     }
 
