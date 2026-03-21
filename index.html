@@ -523,14 +523,28 @@
       });
 
       let heroLyricIndex = Math.floor(Math.random() * heroLyricPairs.length);
-      const heroLyricDisplayMs = 9000;
-      const heroLyricFadeMs = 1600;
+      const heroLyricDisplayMs = 6000;
+      const heroLyricFadeMs = 1500;
+      let currentHeroSongTitle = '';
 
       const renderHeroLyric = () => {
         const { songTitle, lineOne, lineTwo } = heroLyricPairs[heroLyricIndex];
-        heroLyric.innerHTML = lineTwo
-          ? `<span>${lineOne}</span><span>${lineTwo}</span><small class="hero-lyric-song">${songTitle}</small>`
-          : `<span>${lineOne}</span><small class="hero-lyric-song">${songTitle}</small>`;
+        const linesMarkup = lineTwo
+          ? `<span>${lineOne}</span><span>${lineTwo}</span>`
+          : `<span>${lineOne}</span>`;
+
+        if (!heroLyric.querySelector('.hero-lyric-lines')) {
+          heroLyric.innerHTML = `<div class="hero-lyric-lines">${linesMarkup}</div><small class="hero-lyric-song">${songTitle}</small>`;
+          currentHeroSongTitle = songTitle;
+          return;
+        }
+
+        heroLyric.querySelector('.hero-lyric-lines').innerHTML = linesMarkup;
+
+        if (songTitle !== currentHeroSongTitle) {
+          heroLyric.querySelector('.hero-lyric-song').textContent = songTitle;
+          currentHeroSongTitle = songTitle;
+        }
       };
 
       if (heroLyricPairs.length > 0) {
@@ -539,12 +553,17 @@
 
       if (heroLyricPairs.length > 1) {
         window.setInterval(() => {
-          heroLyric.classList.add('is-fading');
+          const heroLyricLines = heroLyric.querySelector('.hero-lyric-lines');
+          if (!heroLyricLines) {
+            return;
+          }
+
+          heroLyricLines.classList.add('is-fading');
 
           window.setTimeout(() => {
             heroLyricIndex = (heroLyricIndex + 1) % heroLyricPairs.length;
             renderHeroLyric();
-            heroLyric.classList.remove('is-fading');
+            heroLyric.querySelector('.hero-lyric-lines')?.classList.remove('is-fading');
           }, heroLyricFadeMs);
         }, heroLyricDisplayMs);
       }

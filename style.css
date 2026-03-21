@@ -297,7 +297,14 @@ img {
   filter: blur(10px);
 }
 
-.hero-lyric.is-fading {
+.hero-lyric-lines {
+  display: grid;
+  gap: 4px;
+  opacity: 1;
+  transition: opacity 1.5s ease;
+}
+
+.hero-lyric-lines.is-fading {
   opacity: 0;
 }
 
